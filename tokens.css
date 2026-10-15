@@ -1,0 +1,15 @@
+:root {
+  --color-ink: #141414;
+  --color-charcoal: #242220;
+  --color-gold: #c2a46d;
+  --color-gold-light: #e4d3ae;
+  --color-gold-deep: #80652f;
+  --color-ivory: #f6f2ea;
+  --color-white: #fff;
+  --color-muted: #615b52;
+  --color-border: #ddd3c1;
+  --font-serif: "Noto Serif JP", "Yu Mincho", "Hiragino Mincho ProN", serif;
+  --font-sans: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+  --width-content: 1200px;
+  --shadow: 0 22px 60px rgba(20, 20, 20, .13);
+}

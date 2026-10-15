@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 430" role="img" aria-labelledby="title">
+  <title id="title">25歳からの魅力に、見合う報酬を。</title>
+  <defs>
+    <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fff3d4"/>
+      <stop offset=".25" stop-color="#cfaa6a"/>
+      <stop offset=".48" stop-color="#fff0c2"/>
+      <stop offset=".72" stop-color="#b87b37"/>
+      <stop offset="1" stop-color="#ebc68c"/>
+    </linearGradient>
+    <filter id="glow" x="-10%" y="-30%" width="120%" height="160%">
+      <feGaussianBlur stdDeviation="7" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <path d="M80 34h350m140 0h350M80 396h350m140 0h350" stroke="#a57a42" stroke-width="1.5" opacity=".7"/>
+  <path d="M500 22l4 12 12 4-12 4-4 12-4-12-12-4 12-4zM500 384l4 12 12 4-12 4-4 12-4-12-12-4 12-4z" fill="#e4bd7a"/>
+  <g fill="url(#gold)" stroke="#b9894a" stroke-width=".45" paint-order="stroke fill" text-anchor="middle" font-family="Hiragino Mincho ProN, Yu Mincho, Noto Serif JP, serif" font-weight="600">
+    <text x="500" y="181" font-size="105" textLength="890" lengthAdjust="spacingAndGlyphs">25歳からの魅力に、</text>
+    <text x="500" y="328" font-size="132" textLength="845" lengthAdjust="spacingAndGlyphs">見合う報酬を。</text>
+  </g>
+</svg>
