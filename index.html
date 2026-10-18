@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="tokens.css"><link rel="stylesheet" href="base.css"><link rel="stylesheet" href="components.css"><link rel="stylesheet" href="pages.css?v=21">
   <link rel="stylesheet" href="experienced.css?v=3">
   <link rel="stylesheet" href="experienced-support.css?v=1">
-  <link rel="stylesheet" href="experience-v2.css?v=1">
+  <link rel="stylesheet" href="experience-v2.css?v=2">
   <link rel="stylesheet" href="experience-v2-support.css?v=1">
   <script defer src="config.js"></script><script defer src="main.js"></script><script defer src="animations.js?v=2"></script>
 </head>
@@ -27,18 +27,14 @@
     </div>
   </header>
   <main>
-    <!-- 経験者ページの導入。本文は画像に焼き込まず個別に編集できます。 -->
+    <!-- ヒーローは提供された3面画像の右端をそのまま表示。原本の画像データは変更しません。 -->
     <section class="ev-hero" aria-labelledby="experienced-title">
-      <div class="ev-hero-visual">
-        <img class="ev-hero-photo" src="hero-pink.jpg" alt="ピンクのブラウスを着て、明るいホテルラウンジで穏やかに微笑む成人女性。AI生成のイメージ。" width="1536" height="1024" fetchpriority="high">
-        <div class="container ev-hero-body"><div class="ev-hero-copy">
-          <span class="ev-kicker">MORE THAN WORK</span>
-          <p class="ev-hero-audience">経験者・移籍・復帰をお考えの方へ</p>
-          <h1 id="experienced-title"><span>私たちが目指すのは</span><span>働く女性が</span><em>「ここで良かった」と</em><span>心から思えるお店です。</span></h1>
-          <p class="ev-hero-lead">あなたが重ねてきた経験に、<br>ふさわしい報酬と、心地よい働き方を。</p>
-          <span class="ev-signature" aria-hidden="true">Your experience. Your next chapter.</span>
-        </div></div>
-        <span class="ev-photo-credit">AI生成のイメージ</span>
+      <h1 class="sr-only" id="experienced-title">私たちが目指すのは、働く女性が「ここで良かった」と心から思えるお店です。</h1>
+      <div class="ev-hero-original">
+        <figure class="ev-hero-original-figure">
+          <div class="ev-hero-original-window"><img src="reward-champagne-approved.png" alt="ピンクのブラウスの女性と、金の装飾をあしらった提供デザイン。クリーンで働きやすい環境づくり、スタッフの丁寧な対応とサポート、あなたの魅力を収入につなぐ仕組みづくり。自分らしく、もっと輝ける場所。" width="1774" height="887" fetchpriority="high"></div>
+          <figcaption>AI生成のイメージ</figcaption>
+        </figure>
       </div>
       <div class="container ev-hero-bottom">
         <aside class="e-help-guide" aria-label="オトちゃんからのひとこと"><span class="e-help-mascot" aria-hidden="true"><img src="otochan-provided.png" alt="" width="1536" height="1024"></span><p><span class="e-help-guide-name">オトちゃん</span>次のお店に求めること、<br>あなたの言葉で聞かせてね。</p></aside>
