@@ -56,17 +56,15 @@ body[data-page="staff"] .button--small { min-height: 42px; padding: 9px 17px; fo
 .staff-ornament::before, .staff-ornament::after { content: ''; position: absolute; border: 1px solid var(--staff-gold); width: 9px; height: 9px; top: 5px; transform: rotate(45deg); }
 .staff-ornament::before { left: 63px; }.staff-ornament::after { right: 63px; }
 .staff-sample-note { max-width: 780px; margin: 0 auto 38px; font-size: .73rem; line-height: 1.9; text-align: center; color: var(--staff-muted); }
-.staff-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 35px; }
+.staff-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 35px; align-items: start; }
 .staff-profile { min-width: 0; overflow: hidden; border-radius: 24px; border: 1px solid var(--staff-line); background: var(--staff-cream); }
-.staff-photo { position: relative; display: flex; align-items: end; justify-content: center; height: 260px; overflow: hidden; background: linear-gradient(135deg, #f4ece1, #e8d6c2); }
-.staff-photo::before { content: ''; position: absolute; width: 230px; height: 230px; top: 40px; left: calc(50% - 115px); border: 1px solid rgba(255,255,255,.65); border-radius: 50%; }
-.staff-photo--manager { background: linear-gradient(135deg, #f0e7df, #dfc9bb); }
-.staff-photo--male { background: linear-gradient(135deg, #edeae2, #d9d5c9); }
-.staff-photo--female { background: linear-gradient(135deg, #f7eae6, #edd2d0); }
-.staff-photo-index { position: absolute; top: 20px; left: 24px; z-index: 1; color: #775c48; font: 500 .65rem/1.6 var(--font-sans); letter-spacing: .12em; }
-.staff-silhouette { display: block; flex-shrink: 0; width: 245px; height: 245px; fill: #bda58e; opacity: .62; }
-.staff-photo--manager .staff-silhouette { fill: #af9484; }.staff-photo--male .staff-silhouette { fill: #a6a18f; }.staff-photo--female .staff-silhouette { fill: #c69f9e; }
-.staff-photo-pending { position: absolute; bottom: 18px; left: 50%; transform: translateX(-50%); background: rgba(255,253,249,.93); border: 1px solid rgba(156,117,83,.18); padding: 6px 20px; border-radius: 50px; color: #775e4c; font-size: .7rem; letter-spacing: .06em; }
+.staff-photo { position: relative; overflow: hidden; }
+.staff-photo-index { color: #775c48; font: 500 .65rem/1.6 var(--font-sans); letter-spacing: .12em; }
+/* 確定写真は横長の原寸比率を保ち、人物を切り取らずに表示する。 */
+.staff-photo.staff-photo--confirmed { display: block; height: auto; margin: 0; background: #f4eee7; }
+.staff-photo--confirmed img { display: block; width: 100%; height: auto; }
+.staff-photo--confirmed .staff-photo-index { position: static; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 5px 12px; padding: 12px 24px; background: #f4eee7; color: #775c48; }
+.staff-photo-credit { font-size: .58rem; font-weight: 400; letter-spacing: .02em; color: var(--staff-muted); }
 .staff-profile-body { padding: 34px 36px 35px; }
 .staff-role { display: flex; align-items: baseline; flex-wrap: wrap; gap: 8px 18px; padding-bottom: 20px; border-bottom: 1px solid var(--staff-line); }
 .staff-role > span { color: #987452; font: 600 .59rem/1.7 var(--font-sans); letter-spacing: .1em; order: 2; }
@@ -74,6 +72,12 @@ body[data-page="staff"] .button--small { min-height: 42px; padding: 9px 17px; fo
 .staff-profile-message { font: 500 clamp(1.25rem, 2vw, 1.65rem)/1.7 var(--font-serif); margin: 24px 0 18px; }
 .staff-profile-message em { color: var(--staff-rose); font-style: normal; }
 .staff-profile-body > p:not(.staff-profile-message) { font-size: .9rem; line-height: 2; margin-bottom: 25px; }
+/* 紹介文は全文を常時表示。文字量に合わせてカードが自然に伸びる。 */
+.staff-profile-body h4.staff-profile-message { font-size: clamp(1.25rem, 1.65vw, 1.5rem); line-height: 1.8; color: #77563d; overflow-wrap: break-word; text-wrap: balance; }
+.staff-profile-message > span { display: inline-block; max-width: 100%; }
+.staff-profile-copy { font-size: 1rem; line-height: 2; overflow-wrap: break-word; }
+.staff-profile-copy p { margin: 0 0 1.4em; }
+.staff-profile-copy p:last-child { margin-bottom: 0; }
 .staff-tags { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; margin: 0; padding: 0; }
 .staff-tags li { font-size: .68rem; color: #8b5a5e; border: 1px solid #e6c6c6; background: #f9eeeb; border-radius: 30px; padding: 5px 12px; }
 .staff-promise { background: linear-gradient(135deg, #faf0eb, #f7e9e4); }
@@ -103,7 +107,7 @@ body[data-page="staff"] .dialog-message { background: #f6eae1; border-radius: 14
   .staff-hero { padding-block: 48px 60px; }.staff-hero-layout { grid-template-columns: 1fr; gap: 38px; }.staff-eyebrow { font-size: .6rem; letter-spacing: .16em; margin-bottom: 16px; }.staff-hero-intro { font-size: .91rem; margin-bottom: 21px; }.staff-hero h1 { font-size: clamp(2.15rem, 8.7vw, 3rem); line-height: 1.55; margin-bottom: 22px; }.staff-lead { font-size: .87rem; }.staff-text-link { font-size: .78rem; }
   .staff-welcome { padding: 34px 20px 30px; border-radius: 110px 110px 20px 20px; max-width: 430px; width: 100%; margin-inline: auto; }.staff-welcome h2 { font-size: 1.4rem; }.staff-welcome > p:not(.staff-eyebrow) { font-size: .82rem; margin-bottom: 24px; }.staff-welcome-icon { margin-bottom: 18px; }
   .staff-section { padding-block: 62px; }.staff-heading { margin-bottom: 25px; }.staff-heading h2 { font-size: 1.7rem; line-height: 1.65; margin-bottom: 18px; }.staff-heading > p { font-size: .83rem; }.staff-sample-note { font-size: .69rem; text-align: left; margin-bottom: 28px; }
-  .staff-grid { grid-template-columns: 1fr; max-width: 500px; margin-inline: auto; gap: 28px; }.staff-photo { height: 225px; }.staff-photo-index { top: 16px; left: 19px; font-size: .59rem; }.staff-photo::before { top: 25px; width: 210px; height: 210px; left: calc(50% - 105px); }.staff-silhouette { width: 220px; height: 220px; }.staff-photo-pending { bottom: 15px; }.staff-profile-body { padding: 26px 24px 28px; }.staff-role { padding-bottom: 17px; gap: 8px 14px; }.staff-role h3 { font-size: 1.55rem; }.staff-role > span { font-size: .56rem; }.staff-profile-message { font-size: 1.35rem; margin-top: 21px; }.staff-profile-body > p:not(.staff-profile-message) { font-size: .84rem; }.staff-tags { gap: 6px; }.staff-tags li { padding: 5px 10px; font-size: .65rem; }
+  .staff-grid { grid-template-columns: 1fr; max-width: 500px; margin-inline: auto; gap: 28px; }.staff-photo-index { font-size: .59rem; }.staff-profile-body { padding: 26px 24px 28px; }.staff-role { padding-bottom: 17px; gap: 8px 14px; }.staff-role h3 { font-size: 1.55rem; }.staff-role > span { font-size: .56rem; }.staff-profile-message { font-size: 1.35rem; margin-top: 21px; }.staff-profile-body > p:not(.staff-profile-message) { font-size: .84rem; }.staff-tags { gap: 6px; }.staff-tags li { padding: 5px 10px; font-size: .65rem; }
   .staff-promise-copy { font-size: .99rem; line-height: 2.15; }.staff-topic-links { display: grid; gap: 0; margin-top: 29px; padding-top: 12px; }.staff-topic-links a { display: flex; justify-content: space-between; gap: 40px; padding: 17px 4px; border-bottom: 1px solid #e1cbbb; font-size: .83rem; }
   .staff-contact { padding-block: 55px; }.staff-contact-inner { flex-direction: column; align-items: start; gap: 28px; }.staff-contact h2 { font-size: 1.6rem; }.staff-contact p { font-size: .84rem; }.staff-contact .button { min-width: 0; width: 100%; font-size: .85rem; }.staff-contact .staff-eyebrow { font-size: .58rem; }
   body[data-page="staff"] .site-footer { padding-block: 34px; }
