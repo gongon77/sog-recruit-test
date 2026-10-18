@@ -1,0 +1,64 @@
+/* 経験者TOPの「仕事を支える仕組み」。写真と本文を独立して編集できる3段構成。 */
+body[data-page="experienced"] .ev-support {
+  padding-block: clamp(72px, 8vw, 120px);
+  background: var(--e-cream, #f7f3ec);
+  color: var(--e-ink, #493c35);
+}
+body[data-page="experienced"] .ev-support-container { max-width: 1120px; }
+body[data-page="experienced"] .ev-support-heading { max-width: 940px; margin: 0 auto clamp(46px, 6vw, 82px); text-align: center; }
+body[data-page="experienced"] .ev-support-eyebrow { display: block; margin-bottom: 22px; color: var(--e-rose, #6a5447); font: 500 .65rem/1.7 var(--font-sans); letter-spacing: .23em; }
+body[data-page="experienced"] .ev-support-heading h2 { margin: 0; color: var(--e-ink, #493c35); font: 500 clamp(1.8rem, 3.05vw, 2.8rem)/1.75 var(--font-serif); letter-spacing: .035em; }
+body[data-page="experienced"] .ev-support-rule { display: block; width: 78px; height: 1px; margin: 28px auto 0; background: var(--e-gold, #b99b68); }
+body[data-page="experienced"] .ev-support-rows { display: grid; gap: clamp(52px, 7vw, 90px); }
+body[data-page="experienced"] .ev-support-row { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); grid-template-areas: "photo copy"; gap: clamp(30px, 4.5vw, 66px); align-items: center; min-width: 0; }
+body[data-page="experienced"] .ev-support-row--reverse { grid-template-areas: "copy photo"; }
+body[data-page="experienced"] .ev-support-row--cocoa { padding: clamp(25px, 3.8vw, 44px); border: 1px solid var(--e-line, #d8c9b3); background: #e8dfd3; gap: clamp(26px, 3.5vw, 46px); }
+
+/* 写真を大きく使い、説明文の置き場所と読み順を固定する。 */
+body[data-page="experienced"] .ev-support-photo { grid-area: photo; position: relative; min-width: 0; margin: 0; overflow: hidden; border-radius: 3px; background: #ddd2c3; }
+body[data-page="experienced"] .ev-support-photo > img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; object-position: center; }
+body[data-page="experienced"] .ev-support-photo figcaption { position: absolute; right: 12px; bottom: 11px; margin: 0; padding: 3px 8px; color: var(--e-ink, #493c35); background: rgba(247, 243, 236, .92); font: 400 .59rem/1.6 var(--font-sans); letter-spacing: .02em; }
+body[data-page="experienced"] .ev-support-copy { grid-area: copy; min-width: 0; padding-block: 14px; }
+body[data-page="experienced"] .ev-support-number { display: flex; align-items: baseline; gap: 14px; margin-bottom: 23px; color: var(--e-rose, #6a5447); font: 400 2rem/1.1 Georgia, serif; }
+body[data-page="experienced"] .ev-support-number > span { color: var(--e-muted, #74665c); font: 500 .57rem/1.7 var(--font-sans); letter-spacing: .13em; }
+body[data-page="experienced"] .ev-support-copy h3 { margin: 0 0 23px; color: var(--e-ink, #493c35); font: 500 clamp(1.55rem, 2.45vw, 2.25rem)/1.75 var(--font-serif); letter-spacing: .025em; }
+body[data-page="experienced"] .ev-support-copy > p { margin: 0 0 18px; color: var(--e-muted, #74665c); font-size: .88rem; line-height: 2.05; letter-spacing: .025em; }
+body[data-page="experienced"] .ev-support-copy > p:last-of-type { margin-bottom: 0; }
+body[data-page="experienced"] .ev-support-points { display: grid; gap: 10px; margin: 25px 0 0; padding: 22px 0 0; border-top: 1px solid var(--e-line, #d8c9b3); list-style: none; }
+body[data-page="experienced"] .ev-support-points > li { position: relative; padding-left: 17px; color: var(--e-rose, #6a5447); font-size: .76rem; line-height: 1.85; }
+body[data-page="experienced"] .ev-support-points > li::before { content: ''; position: absolute; top: .75em; left: 0; width: 7px; height: 1px; background: var(--e-gold, #b99b68); }
+body[data-page="experienced"] .ev-support-row--cocoa .ev-support-copy > p,
+body[data-page="experienced"] .ev-support-row--cocoa .ev-support-number > span { color: #65564b; }
+body[data-page="experienced"] .ev-support-row--cocoa .ev-support-points { border-color: #c4b198; }
+
+@media (max-width: 1000px) {
+  body[data-page="experienced"] .ev-support-row { gap: 30px; }
+  body[data-page="experienced"] .ev-support-row--cocoa { padding: 27px; gap: 26px; }
+  body[data-page="experienced"] .ev-support-photo > img { aspect-ratio: 1; }
+  body[data-page="experienced"] .ev-support-number { gap: 10px; margin-bottom: 19px; }
+  body[data-page="experienced"] .ev-support-number > span { font-size: .52rem; letter-spacing: .08em; }
+  body[data-page="experienced"] .ev-support-copy h3 { font-size: clamp(1.42rem, 2.65vw, 1.8rem); margin-bottom: 20px; }
+  body[data-page="experienced"] .ev-support-copy > p { font-size: .82rem; line-height: 2; }
+  body[data-page="experienced"] .ev-support-points { padding-top: 18px; margin-top: 22px; }
+  body[data-page="experienced"] .ev-support-points > li { font-size: .73rem; }
+}
+@media (max-width: 760px) {
+  body[data-page="experienced"] .ev-support { padding-block: 65px; }
+  body[data-page="experienced"] .ev-support-heading { margin-bottom: 38px; }
+  body[data-page="experienced"] .ev-support-eyebrow { margin-bottom: 17px; font-size: .57rem; letter-spacing: .19em; }
+  body[data-page="experienced"] .ev-support-heading h2 { font-size: clamp(1.45rem, 5.9vw, 2.1rem); line-height: 1.85; letter-spacing: .01em; }
+  body[data-page="experienced"] .ev-support-rule { width: 62px; margin-top: 23px; }
+  body[data-page="experienced"] .ev-support-rows { gap: 45px; }
+  body[data-page="experienced"] .ev-support-row,
+  body[data-page="experienced"] .ev-support-row--reverse { grid-template-columns: minmax(0, 1fr); grid-template-areas: "photo" "copy"; gap: 27px; }
+  body[data-page="experienced"] .ev-support-row--cocoa { padding: 20px; gap: 25px; }
+  body[data-page="experienced"] .ev-support-photo > img { aspect-ratio: 4 / 3; }
+  body[data-page="experienced"] .ev-support-photo figcaption { right: 9px; bottom: 8px; font-size: .55rem; padding: 2px 6px; }
+  body[data-page="experienced"] .ev-support-copy { padding-block: 0; }
+  body[data-page="experienced"] .ev-support-number { margin-bottom: 18px; font-size: 1.75rem; gap: 12px; }
+  body[data-page="experienced"] .ev-support-number > span { font-size: .53rem; }
+  body[data-page="experienced"] .ev-support-copy h3 { font-size: clamp(1.5rem, 6.4vw, 2rem); line-height: 1.75; margin-bottom: 19px; }
+  body[data-page="experienced"] .ev-support-copy > p { font-size: .84rem; line-height: 2; margin-bottom: 15px; }
+  body[data-page="experienced"] .ev-support-points { gap: 8px; margin-top: 22px; padding-top: 20px; }
+  body[data-page="experienced"] .ev-support-points > li { font-size: .75rem; }
+}
