@@ -364,7 +364,10 @@ body[data-page="experienced"] .hero .lead { max-width: 440px; margin-bottom: 25p
 body[data-page="experienced"] .hero-art { position: relative; grid-column: 2; grid-row: 1; width: 100%; min-width: 0; align-self: stretch; display: flex; align-items: center; background: #e5daca; overflow: hidden; }
 body[data-page="experienced"] .hero-art::after { content: ''; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(90deg, #f7f3ec, transparent 12%); }
 body[data-page="experienced"] .e-hero-portrait { position: relative; width: 100%; aspect-ratio: 512 / 498; overflow: hidden; }
-body[data-page="experienced"] .e-hero-portrait .hero-source-image { position: absolute; width: 200%; max-width: none; height: auto; left: -100%; top: -21.485944%; }
+/* 既存hero-enterはtransformを上書きするため、表示範囲の画像には適用しない。 */
+body[data-page="experienced"] .e-hero-portrait .hero-source-image { position: absolute; width: 200%; max-width: none; height: auto; left: -100%; top: -21.485944%; animation: none; }
+body[data-page="experienced"] .e-hero-portrait { animation: e-portrait-enter 1.1s ease both; }
+@keyframes e-portrait-enter { from { opacity: .35; } to { opacity: 1; } }
 body[data-page="experienced"] .e-photo-credit { position: absolute; z-index: 1; right: 14px; bottom: 10px; color: #493c35; background: rgba(247,243,236,.86); padding: 2px 7px; font-size: .57rem; }
 body[data-page="experienced"] .hero-price { display: flex; flex-direction: column; width: fit-content; min-width: 300px; margin: 0 0 24px; padding: 15px 25px; border: 1px solid #cdbb9f; border-radius: 4px; background: rgba(255,253,249,.8); }
 body[data-page="experienced"] .hero-price span { color: var(--e-muted); font-size: .72rem; }
