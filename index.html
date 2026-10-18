@@ -4,11 +4,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex,nofollow">
-  <meta name="theme-color" content="#141414">
+  <meta name="theme-color" content="#fff9f4">
   <meta name="description" content="SUPER OTONA GIRLSの求人LPデザイン検討用サンプル。経験者向けの報酬・働く環境をご紹介します。">
   <title>経験者の方へ | SUPER OTONA GIRLS 求人サンプル</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="tokens.css"><link rel="stylesheet" href="base.css"><link rel="stylesheet" href="components.css"><link rel="stylesheet" href="pages.css?v=21">
+  <link rel="stylesheet" href="experienced.css?v=1">
   <script defer src="config.js"></script><script defer src="main.js"></script><script defer src="animations.js?v=2"></script><script defer src="reward-carousel.js"></script>
 </head>
 <body data-page="experienced">
@@ -23,20 +24,23 @@
     </div>
   </header>
   <main>
-    <section class="hero hero--dark hero--reference">
+    <section class="hero hero--dark hero--reference" aria-labelledby="experienced-title">
       <a class="hero-mobile-jump" href="beginner.html" data-beginner-link>未経験・Wワークの方へ →</a>
       <div class="container hero-reference-layout">
         <div class="hero-art">
           <img class="hero-source-image" src="sog-mv-provided.jpg" alt="ご提供のSUPER OTONA GIRLSの告知画像。モノクロの女性と金色の装飾。" width="1003" height="1348" fetchpriority="high">
-          <img class="hero-gold-copy" src="gold-headline.svg?v=3" alt="" width="1000" height="430">
         </div>
         <div class="hero-content">
-        <span class="eyebrow">RENEWAL OPEN · EXPERIENCED</span>
-        <h1 class="sr-only">25歳からの魅力に、見合う報酬を。</h1>
+        <div class="e-hero-heading">
+          <span class="eyebrow">RENEWAL OPEN · EXPERIENCED</span>
+          <h1 id="experienced-title"><span>25歳からの魅力に、</span><span>見合う報酬を。</span></h1>
+        </div>
+        <div class="e-hero-details">
         <p class="lead">あなたが磨いてきた接客と、大人の魅力。その価値を大切にする、SUPER OTONA GIRLS。</p>
         <div class="hero-price"><span>90分コース報酬・1接客あたり</span><strong>19,000円〜</strong></div>
         <div class="button-row"><button class="button" type="button" data-line>LINEで報酬・待遇を相談する ↗</button></div>
         <div class="subnav"><a href="beginner.html" data-beginner-link>未経験・昼職とのWワークをお考えの方はこちら →</a><a href="simulator.html">収入をシミュレーションする →</a></div>
+        </div>
         </div>
       </div>
     </section>
@@ -151,7 +155,7 @@
       </div>
     </section>
     <section class="reward-reference" id="reward" aria-labelledby="reward-title">
-      <h2 class="sr-only" id="reward-title">報酬と1日の計算例</h2>
+      <div class="container e-reward-heading reveal"><span class="eyebrow">YOUR REWARD</span><h2 id="reward-title">報酬と1日の計算例</h2><span class="e-rule" aria-hidden="true"></span></div>
       <div class="reward-reference-desktop reveal">
         <img src="reward-desktop-provided.png" width="1967" height="799" loading="lazy" alt="ご提供の報酬デザイン。90分19,000円から、120分23,000円からの報酬と、4件を仮定した1日88,000円の計算例、ブランドメッセージを3面で紹介。">
       </div>
@@ -253,8 +257,8 @@
         </div>
       </div>
     </section>
-    <section class="section section--ivory"><div class="container split"><div class="reveal"><span class="eyebrow">OUR SUPPORT TEAM</span><h2>働くあなたを支える、<br>私たちのチーム。</h2><p>代表・店長・男性スタッフ・女性スタッフ。私たちが皆さんをサポートします。</p><a class="button button--outline" href="staff.html">サポートスタッフを見る →</a></div><div class="quote-block reveal" data-delay="1">小さな不安も、<br>私たちに聞かせてください。</div></div></section>
-    <section class="section section--white"><div class="container"><div class="section-heading reveal"><span class="eyebrow">YOUR FIRST STEP</span><h2>相談から、納得できる一歩へ。</h2></div><div class="flow"><div class="reveal"><h3>LINEで相談</h3><p>希望や気になる点をお聞かせください。</p></div><div class="reveal" data-delay="1"><h3>条件を確認</h3><p>報酬・仕事内容・勤務条件を説明します。</p></div><div class="reveal" data-delay="2"><h3>面談・説明</h3><p>正式な手順は店舗確認後に更新します。</p></div><div class="reveal"><h3>勤務準備</h3><p>双方が納得したうえで進めます。</p></div></div></div></section>
+    <section class="section section--ivory e-team"><div class="container split"><div class="reveal"><span class="eyebrow">OUR SUPPORT TEAM</span><h2>働くあなたを支える、<br>私たちのチーム。</h2><p>代表・店長・男性スタッフ・女性スタッフ。私たちが皆さんをサポートします。</p><a class="button button--outline" href="staff.html">サポートスタッフを見る →</a></div><div class="quote-block reveal" data-delay="1">小さな不安も、<br>私たちに聞かせてください。</div></div></section>
+    <section class="section section--white e-first-steps"><div class="container"><div class="section-heading reveal"><span class="eyebrow">YOUR FIRST STEP</span><h2>相談から、納得できる一歩へ。</h2></div><div class="flow"><div class="reveal"><h3>LINEで相談</h3><p>希望や気になる点をお聞かせください。</p></div><div class="reveal" data-delay="1"><h3>条件を確認</h3><p>報酬・仕事内容・勤務条件を説明します。</p></div><div class="reveal" data-delay="2"><h3>面談・説明</h3><p>正式な手順は店舗確認後に更新します。</p></div><div class="reveal"><h3>勤務準備</h3><p>双方が納得したうえで進めます。</p></div></div></div></section>
     <section class="section store-info" id="store-info" aria-labelledby="store-info-title">
       <div class="container">
         <div class="store-info__heading reveal"><span class="eyebrow">STORE INFORMATION</span><h2 id="store-info-title">店舗情報</h2><p>勤務地や勤務条件など、応募前に知っておきたい基本情報をご案内します。</p></div>
@@ -281,7 +285,7 @@
         </div>
       </div>
     </section>
-    <section class="section section--dark"><div class="container"><div class="cta-panel reveal"><div><span class="eyebrow">CONTACT</span><h2>次のお店は、<br>報酬も環境も納得して選ぶ。</h2><p>まずは、今の働き方や希望についてご相談ください。</p></div><button class="button" type="button" data-line>LINEで報酬・待遇を相談する ↗</button></div></div></section>
+    <section class="section section--dark e-contact"><div class="container"><div class="cta-panel reveal"><div><span class="eyebrow">CONTACT</span><h2>次のお店は、<br>報酬も環境も納得して選ぶ。</h2><p>まずは、今の働き方や希望についてご相談ください。</p></div><button class="button" type="button" data-line>LINEで報酬・待遇を相談する ↗</button></div></div></section>
   </main>
   <footer class="site-footer"><div class="container"><a class="brand" href="index.html">SUPER OTONA GIRLS<small>RECRUIT / OSAKA</small></a><div class="footer-links"><a href="index.html">経験者の方へ</a><a href="beginner.html">未経験・Wワーク</a><a href="staff.html">スタッフ紹介</a><a href="simulator.html">報酬シミュレーター</a></div></div></footer>
   <div class="mobile-cta"><a class="button button--outline" href="simulator.html">報酬を計算</a><button class="button" type="button" data-line>LINEで相談する ↗</button></div>
