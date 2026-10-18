@@ -1,18 +1,18 @@
-/* 経験者TOP専用。未経験ページと共通する柔らかな色と、落ち着いた余白を使う。 */
+/* 経験者TOP専用：承認済みのシャンパン × グレージュ。 */
 /* 静止確認ではアンカー移動も即時にする。このCSSはTOPでのみ読み込む。 */
 html.design-mode { scroll-behavior: auto; }
 body[data-page="experienced"] {
-  --e-cream: #fff9f4;
-  --e-blush: #faefeb;
-  --e-rose: #b04461;
-  --e-rose-dark: #92374f;
-  --e-ink: #4d3d37;
-  --e-muted: #75655d;
-  --e-gold: #b39061;
-  --e-line: #e7d5c4;
+  --e-cream: #f7f3ec;
+  --e-blush: #eee7dd;
+  --e-rose: #6a5447;
+  --e-rose-dark: #584438;
+  --e-ink: #493c35;
+  --e-muted: #74665c;
+  --e-gold: #b99b68;
+  --e-line: #d8c9b3;
   --e-space: clamp(76px, 8vw, 116px);
   --color-ink: var(--e-ink);
-  --color-charcoal: #f2e5dd;
+  --color-charcoal: #ddd2c3;
   --color-muted: var(--e-muted);
   --color-border: var(--e-line);
   --color-ivory: var(--e-cream);
@@ -44,29 +44,12 @@ body[data-page="experienced"] .button:hover,
 body[data-page="experienced"] .button:focus-visible { background: #805839; box-shadow: 0 8px 23px rgba(117,81,63,.17); transform: translateY(-2px); }
 body[data-page="experienced"] .button--outline { color: #76553c; background: rgba(255,255,255,.7); border-color: #b99873; box-shadow: none; }
 body[data-page="experienced"] .button--outline:hover,
-body[data-page="experienced"] .button--outline:focus-visible { background: #f7e8de; }
+body[data-page="experienced"] .button--outline:focus-visible { background: #eee7dd; }
 body[data-page="experienced"] .button--small { min-height: 42px; padding: 9px 17px; font-size: .8rem; }
-body[data-page="experienced"] .text-link { color: #8c4c57; text-decoration-thickness: 1px; text-underline-offset: 6px; }
+body[data-page="experienced"] .text-link { color: #6a5447; text-decoration-thickness: 1px; text-underline-offset: 6px; }
 body[data-page="experienced"] .fine-print { color: var(--e-muted); }
 
-/* ヒーロー：提供画像は切り抜かず、コピーと並べる。 */
-body[data-page="experienced"] .hero--reference { min-height: 0; padding: 42px 0 58px; background: radial-gradient(ellipse at 15% 10%, #fffdf9, transparent 65%), linear-gradient(135deg, #fff9f4 35%, #f7e8e2); color: var(--e-ink); }
-body[data-page="experienced"] .hero--reference .hero-reference-layout { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); gap: clamp(36px, 5.5vw, 80px); align-items: center; padding-block: 0; }
-body[data-page="experienced"] .hero-art { grid-column: 2; grid-row: 1; position: relative; width: 100%; max-width: 424px; justify-self: end; padding: 10px; background: #fffcf8; border: 1px solid #dfc8b3; border-radius: 160px 160px 24px 24px; box-shadow: 0 20px 50px rgba(110,70,46,.1); }
-body[data-page="experienced"] .hero-source-image { width: 100%; height: auto; border-radius: 150px 150px 17px 17px; }
-body[data-page="experienced"] .hero--reference .hero-content { grid-column: 1; grid-row: 1; padding: 25px 0; min-width: 0; width: 100%; }
-body[data-page="experienced"] .hero .eyebrow { margin-bottom: 23px; }
-body[data-page="experienced"] .hero h1 { margin: 0 0 27px; color: var(--e-ink); font-size: clamp(2rem, 3.35vw, 3.25rem); font-weight: 500; line-height: 1.65; letter-spacing: .015em; }
-body[data-page="experienced"] .hero h1 span { display: block; }
-body[data-page="experienced"] .hero h1 span:last-child { color: var(--e-rose); }
-body[data-page="experienced"] .hero .lead { max-width: 490px; margin-bottom: 26px; color: var(--e-muted); font-size: .96rem; line-height: 2; }
-body[data-page="experienced"] .hero-price { display: flex; width: fit-content; margin: 0 0 28px; padding: 17px 25px 19px; border: 1px solid var(--e-line); border-radius: 18px; background: rgba(255,255,255,.72); }
-body[data-page="experienced"] .hero-price span { color: var(--e-muted); font-size: .76rem; letter-spacing: .04em; }
-body[data-page="experienced"] .hero-price strong { color: var(--e-rose); font-size: clamp(2rem, 3.6vw, 3.2rem); font-weight: 500; line-height: 1.3; }
-body[data-page="experienced"] .hero .button-row .button { min-width: min(100%, 360px); }
-body[data-page="experienced"] .hero .subnav { display: flex; align-items: start; flex-direction: column; gap: 13px; margin-top: 23px; }
-body[data-page="experienced"] .hero .subnav a { color: #835549; font-size: .75rem; font-weight: 500; text-decoration-thickness: 1px; text-underline-offset: 5px; }
-body[data-page="experienced"] .hero-mobile-jump { display: none; }
+/* ヒーローの表示範囲・レイアウトはファイル末尾で管理。 */
 
 /* 長い導入文は小さな章に分け、行長と段落間隔で読み進めやすくする。 */
 body[data-page="experienced"] .sog-introduction { --intro-bg: var(--e-cream); --intro-ink: var(--e-ink); --intro-gold: var(--e-gold); --intro-gold-ink: #8d6b4b; --intro-line: var(--e-line); --intro-space: clamp(65px, 7vw, 96px); padding-block: var(--e-space); background: #fffdf9; }
@@ -86,12 +69,12 @@ body[data-page="experienced"] .intro-prose { color: var(--e-muted); font-size: .
 body[data-page="experienced"] .intro-prose--opening p:first-child { font-size: 1em; }
 body[data-page="experienced"] .intro-prose p { margin-bottom: 1.4em; }
 body[data-page="experienced"] .intro-prose p:last-child { margin-bottom: 0; }
-body[data-page="experienced"] .intro-philosophy { padding: clamp(43px, 6vw, 75px); border: 1px solid #ebd8ce; border-radius: 110px 110px 22px 22px; background: linear-gradient(135deg, #fff8f2, #faeeeb); }
+body[data-page="experienced"] .intro-philosophy { padding: clamp(43px, 6vw, 75px); border: 1px solid #d9cbb7; border-radius: 110px 110px 22px 22px; background: linear-gradient(135deg, #fff8f2, #e8dfd2); }
 body[data-page="experienced"] .intro-philosophy-line { margin: 25px auto 38px; color: var(--e-rose); font: 500 clamp(1.8rem, 3vw, 2.85rem)/1.7 var(--font-serif); }
 body[data-page="experienced"] .intro-philosophy-body { max-width: 810px; gap: 18px 45px; }
 body[data-page="experienced"] .intro-wishes { border-top: 0; }
 body[data-page="experienced"] .intro-wishes li { grid-template-columns: 35px minmax(0, 1fr); gap: 15px; padding-block: 20px; border-color: var(--e-line); }
-body[data-page="experienced"] .intro-wishes li > span { display: grid; place-items: center; width: 29px; height: 29px; border: 1px solid #dfc4bc; border-radius: 50%; background: #fcf2ed; color: #a05b66; font-size: .74rem; }
+body[data-page="experienced"] .intro-wishes li > span { display: grid; place-items: center; width: 29px; height: 29px; border: 1px solid #d8c9b3; border-radius: 50%; background: #f7f3ec; color: #80664e; font-size: .74rem; }
 body[data-page="experienced"] .intro-wishes p { color: var(--e-ink); font-size: clamp(1.1rem, 1.65vw, 1.48rem); line-height: 1.85; }
 body[data-page="experienced"] .intro-for-you-copy { margin: 33px 0 0 50px; }
 body[data-page="experienced"] .intro-promise { padding: 40px 45px; border: 1px solid var(--e-line); border-radius: 24px; background: #fff8ef; grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); gap: 38px; }
@@ -101,7 +84,7 @@ body[data-page="experienced"] .intro-closing h3 { margin-block: 25px 30px; color
 body[data-page="experienced"] .intro-closing h3 > span:last-child { color: var(--e-rose); }
 body[data-page="experienced"] .intro-end-rule { margin-top: 42px; }
 
-/* 経験者向けの理由。黒金の写真は装飾帯に残し、本文は明るい面に分離する。 */
+/* 経験者向けの理由。人物写真と明るい本文を組み合わせる。 */
 body[data-page="experienced"] .standard-section { padding-block: var(--e-space); background: var(--e-blush); }
 body[data-page="experienced"] .standard-heading { max-width: 900px; margin-bottom: 43px; }
 body[data-page="experienced"] .standard-heading h2 { color: var(--e-ink); font-size: clamp(1.85rem, 3.15vw, 2.9rem); line-height: 1.7; }
@@ -129,39 +112,30 @@ body[data-page="experienced"] .standard-closing h3 span { color: var(--e-gold); 
 body[data-page="experienced"] .standard-footer { padding-top: 33px; }
 body[data-page="experienced"] .standard-beginner-link { width: min(100%, 350px); background: #fffdf9; border-color: #bb9875; color: #805839; box-shadow: none; }
 body[data-page="experienced"] .standard-beginner-link:hover,
-body[data-page="experienced"] .standard-beginner-link:focus-visible { background: #f7e8de; color: #76553c; box-shadow: none; }
+body[data-page="experienced"] .standard-beginner-link:focus-visible { background: #eee7dd; color: #76553c; box-shadow: none; }
 
-/* 報酬の提供画像はそのまま。余白のあるライトな額縁の中に配置する。 */
+/* 報酬の承認画像は縦に3面。表示範囲はファイル末尾で管理。 */
 body[data-page="experienced"] .reward-reference { --reward-gold: var(--e-gold); background: #fffdf9; color: var(--e-ink); padding-block: var(--e-space); }
 body[data-page="experienced"] .e-reward-heading { text-align: center; margin-bottom: 43px; }
 body[data-page="experienced"] .e-reward-heading h2 { margin-bottom: 0; font-size: clamp(1.85rem, 3.15vw, 2.9rem); }
-body[data-page="experienced"] .reward-reference-desktop { width: min(calc(100% - 48px), 1120px); padding: 10px; border: 1px solid #ddc8b5; border-radius: 22px; background: var(--e-cream); box-shadow: 0 15px 42px rgba(91,61,38,.07); }
-body[data-page="experienced"] .reward-reference-desktop img { border-radius: 14px; }
-body[data-page="experienced"] .reward-reference-mobile { padding: 9px; border: 1px solid #ddc8b5; border-radius: 22px; background: var(--e-cream); }
-body[data-page="experienced"] .reward-reference-viewport { border-radius: 14px; }
-body[data-page="experienced"] .reward-reference-controls button { color: #866140; background: white; border-color: #d2b89b; }
-body[data-page="experienced"] .reward-reference-controls button:hover,
-body[data-page="experienced"] .reward-reference-controls button:focus-visible { color: #fff; background: #916a46; }
-body[data-page="experienced"] .reward-reference-controls button:focus-visible { outline-color: var(--e-rose); }
-body[data-page="experienced"] .reward-reference-controls span { color: #81664f; }
 
 /* 3つのサポートは余白のある小さなカードへ。PC・スマホ別の編集文は保持。 */
-body[data-page="experienced"] .work-support { background: linear-gradient(135deg, #fff6ee, #f9eeec); color: var(--e-ink); }
+body[data-page="experienced"] .work-support { background: linear-gradient(135deg, #fff6ee, #e8dfd2); color: var(--e-ink); }
 body[data-page="experienced"] .work-support .section-heading { max-width: 900px; }
 body[data-page="experienced"] .work-support .info-grid { gap: 20px; }
 body[data-page="experienced"] .work-support .info-card { min-height: 254px; padding: 31px; background: #fffdf9; border: 1px solid #e5cfc1; border-radius: 24px; }
-body[data-page="experienced"] .work-support .info-card .num { display: grid; place-items: center; width: 46px; height: 46px; margin-bottom: 23px; border: 1px solid #e7c6c8; border-radius: 50%; background: #fbefec; color: #ad6a76; font-size: 1.25rem; }
+body[data-page="experienced"] .work-support .info-card .num { display: grid; place-items: center; width: 46px; height: 46px; margin-bottom: 23px; border: 1px solid #d8c9b3; border-radius: 50%; background: #eee7dd; color: #9c7f54; font-size: 1.25rem; }
 body[data-page="experienced"] .work-support .info-card h3 { color: var(--e-rose); font: 500 1.17rem/1.65 var(--font-serif); }
 body[data-page="experienced"] .work-support .info-card p { color: var(--e-muted); font-size: .87rem; line-height: 1.95; }
 
 /* 人物画像は既存の表示枠を保持し、ケース本文・計算面を柔らかな面へ。 */
-body[data-page="experienced"] .simulation-stories { --simulation-ink: #fff2eb; --simulation-gold: var(--e-gold); --simulation-line: var(--e-line); background: var(--e-cream); color: var(--e-ink); }
+body[data-page="experienced"] .simulation-stories { --simulation-ink: #f7f3ec; --simulation-gold: var(--e-gold); --simulation-line: var(--e-line); background: var(--e-cream); color: var(--e-ink); }
 body[data-page="experienced"] .simulation-stories__heading { margin-bottom: 46px; }
 body[data-page="experienced"] .simulation-stories__heading h2 { font-size: clamp(1.95rem, 3.2vw, 3rem); line-height: 1.65; }
 body[data-page="experienced"] .simulation-stories__heading p { color: var(--e-muted); font-size: .93rem; }
 body[data-page="experienced"] .simulation-case { border-color: #e3cfc0; border-radius: 27px; overflow: hidden; background: #fffdf9; box-shadow: 0 18px 45px rgba(115,79,48,.055); }
 body[data-page="experienced"] .simulation-case__photo::after { background: linear-gradient(transparent 50%, rgba(56,35,25,.35)); }
-body[data-page="experienced"] .simulation-case__photo figcaption { inset: auto 20px 20px; justify-content: start; flex-wrap: wrap; width: fit-content; padding: 11px 16px; border: 1px solid #ead7c6; border-radius: 50px; background: rgba(255,249,244,.94); color: #8e5c58; font: 600 .78rem/1.3 var(--font-sans); letter-spacing: .1em; }
+body[data-page="experienced"] .simulation-case__photo figcaption { inset: auto 20px 20px; justify-content: start; flex-wrap: wrap; width: fit-content; padding: 11px 16px; border: 1px solid #ead7c6; border-radius: 50px; background: rgba(255,249,244,.94); color: #6a5447; font: 600 .78rem/1.3 var(--font-sans); letter-spacing: .1em; }
 body[data-page="experienced"] .simulation-case__photo figcaption span { font-size: .58rem; }
 body[data-page="experienced"] .simulation-case__content { padding: clamp(32px, 3.7vw, 52px) clamp(28px, 3.6vw, 50px); }
 body[data-page="experienced"] .simulation-case__label { margin-bottom: 20px; color: #9a7552; font-size: .63rem; }
@@ -171,13 +145,13 @@ body[data-page="experienced"] .simulation-case__name { color: #7b5447; font-size
 body[data-page="experienced"] .simulation-case__name span { color: var(--e-muted); }
 body[data-page="experienced"] .simulation-case__description { color: var(--e-muted); font-size: .88rem; line-height: 1.95; }
 body[data-page="experienced"] .simulation-timeline { margin-bottom: 27px; }
-body[data-page="experienced"] .simulation-timeline time { color: #ac6676; font-size: 1.15rem; }
+body[data-page="experienced"] .simulation-timeline time { color: #8b704c; font-size: 1.15rem; }
 body[data-page="experienced"] .simulation-timeline span { color: var(--e-muted); }
 body[data-page="experienced"] .simulation-case__workstyle { gap: 8px 13px; color: #94674e; font-size: 1.1rem; }
-body[data-page="experienced"] .simulation-calculation { padding: 22px 24px; background: #fcf0ea; border: 1px solid #e6cfc1; border-radius: 18px; color: var(--e-ink); }
+body[data-page="experienced"] .simulation-calculation { padding: 22px 24px; background: #f1ebe2; border: 1px solid #e6cfc1; border-radius: 18px; color: var(--e-ink); }
 body[data-page="experienced"] .simulation-calculation__caption { color: #957451; font-size: .6rem; }
 body[data-page="experienced"] .simulation-calculation p { border-color: #e4cdbd; font-size: .78rem; }
-body[data-page="experienced"] .simulation-calculation p strong { color: #9e5262; }
+body[data-page="experienced"] .simulation-calculation p strong { color: #6a5447; }
 body[data-page="experienced"] .simulation-calculation__total { gap: 7px 15px; }
 body[data-page="experienced"] .simulation-calculation__total > span { color: #836a59; font-size: .79rem; }
 body[data-page="experienced"] .simulation-calculation__total strong { color: var(--e-rose); font-size: clamp(2rem, 3vw, 3.05rem); }
@@ -199,22 +173,16 @@ body[data-page="experienced"] .waiting-video figcaption .eyebrow { color: #92704
 body[data-page="experienced"] .waiting-photo-grid { gap: 18px; }
 body[data-page="experienced"] .waiting-photo-grid figure { display: flex; flex-direction: column; aspect-ratio: auto; overflow: hidden; border: 1px solid var(--e-line); border-radius: 18px; background: var(--e-cream); }
 body[data-page="experienced"] .waiting-photo-grid img { height: auto; aspect-ratio: 1.1; object-fit: cover; flex: 0 0 auto; }
-body[data-page="experienced"] .waiting-photo-grid figcaption { position: static; gap: 9px; padding: 12px 15px; background: transparent; color: #ac6a75; font-size: .95rem; }
+body[data-page="experienced"] .waiting-photo-grid figcaption { position: static; gap: 9px; padding: 12px 15px; background: transparent; color: #8b704c; font-size: .95rem; }
 body[data-page="experienced"] .waiting-photo-grid figcaption span { color: var(--e-muted); font-size: .73rem; }
 
 /* スタッフ紹介・応募の流れ・店舗情報も同じリズムでつなぐ。 */
-body[data-page="experienced"] .e-team { background: #faefeb; }
+body[data-page="experienced"] .e-team { background: #eee7dd; }
 body[data-page="experienced"] .e-team .split { gap: 75px; }
 body[data-page="experienced"] .e-team h2 { font-size: clamp(1.9rem, 3vw, 2.8rem); line-height: 1.7; }
 body[data-page="experienced"] .e-team p { color: var(--e-muted); font-size: .92rem; line-height: 1.95; }
-body[data-page="experienced"] .e-team .quote-block { padding: 48px 30px; border: 1px solid #e4cfc2; border-radius: 100px 100px 20px 20px; background: rgba(255,253,249,.8); text-align: center; color: #a25264; font-size: clamp(1.5rem, 2.3vw, 2rem); line-height: 1.85; }
-body[data-page="experienced"] .e-first-steps { background: #fffdf9; }
-body[data-page="experienced"] .flow { gap: 17px; }
-body[data-page="experienced"] .flow > div { padding: 25px 21px 27px; border: 1px solid var(--e-line); border-radius: 20px; background: var(--e-cream); }
-body[data-page="experienced"] .flow > div::before { color: #b67b86; font-size: 1.7rem; }
-body[data-page="experienced"] .flow h3 { margin-top: 17px; color: #985569; font: 500 1.12rem/1.6 var(--font-serif); }
-body[data-page="experienced"] .flow p { color: var(--e-muted); font-size: .84rem; line-height: 1.9; }
-body[data-page="experienced"] .store-info { --store-rule: #e7d5c4; background: var(--e-cream); color: var(--e-ink); }
+body[data-page="experienced"] .e-team .quote-block { padding: 48px 30px; border: 1px solid #e4cfc2; border-radius: 100px 100px 20px 20px; background: rgba(255,253,249,.8); text-align: center; color: #6a5447; font-size: clamp(1.5rem, 2.3vw, 2rem); line-height: 1.85; }
+body[data-page="experienced"] .store-info { --store-rule: #d8c9b3; background: var(--e-cream); color: var(--e-ink); }
 body[data-page="experienced"] .store-info__heading { margin-bottom: 43px; }
 body[data-page="experienced"] .store-info__heading h2 { color: var(--e-ink); font-size: clamp(2rem, 3.25vw, 3rem); }
 body[data-page="experienced"] .store-info__heading p { color: var(--e-muted); font-size: .92rem; line-height: 1.9; }
@@ -222,15 +190,11 @@ body[data-page="experienced"] .store-info__grid { gap: 28px; padding: 30px; bord
 body[data-page="experienced"] .store-info__list { border: 0; }
 body[data-page="experienced"] .store-info__list > div { grid-template-columns: minmax(90px, .29fr) minmax(0, .71fr); gap: 18px; padding: 18px 3px; border-color: var(--e-line); }
 body[data-page="experienced"] .store-info__list > div:last-child { border-bottom: 0; }
-body[data-page="experienced"] .store-info__list dt { color: #a36a73; font-size: .73rem; }
+body[data-page="experienced"] .store-info__list dt { color: #6a5447; font-size: .73rem; }
 body[data-page="experienced"] .store-info__list dd { color: var(--e-ink); font-size: .9rem; line-height: 1.9; }
 body[data-page="experienced"] .store-info__url { color: #8c705c; font-size: .8rem !important; }
-body[data-page="experienced"] .e-contact { background: #fbefeb; color: var(--e-ink); }
-body[data-page="experienced"] .cta-panel { flex-direction: column; gap: 28px; text-align: center; padding: clamp(38px, 5vw, 68px) 25px; border: 1px solid #dfc7b5; border-radius: 110px 110px 24px 24px; background: #fffaf5; color: var(--e-ink); }
-body[data-page="experienced"] .cta-panel h2 { font-size: clamp(1.8rem, 3.1vw, 2.9rem); line-height: 1.7; }
-body[data-page="experienced"] .cta-panel p { color: var(--e-muted); font-size: .93rem; }
-body[data-page="experienced"] .cta-panel .button { min-width: min(100%, 380px); }
-body[data-page="experienced"] .site-footer { padding-block: 47px 50px; background: #efe0d5; color: #715b4a; }
+body[data-page="experienced"] .e-contact { background: #eee7dd; color: var(--e-ink); }
+body[data-page="experienced"] .site-footer { padding-block: 47px 50px; background: #ddd2c3; color: #715b4a; }
 body[data-page="experienced"] .footer-links { margin-bottom: 0; }
 body[data-page="experienced"] .footer-links a { font-size: .79rem; text-decoration-thickness: 1px; text-underline-offset: 5px; }
 body[data-page="experienced"] .mobile-cta { border-color: #dfc9b7; background: rgba(255,249,244,.97); box-shadow: 0 -5px 22px rgba(114,77,49,.08); }
@@ -241,9 +205,6 @@ body[data-page="experienced"] .dialog-inner p { color: var(--e-muted); }
 body[data-page="experienced"] .dialog-message { border-radius: 14px; background: var(--e-cream); }
 
 @media (max-width: 1050px) {
-  body[data-page="experienced"] .hero--reference .hero-reference-layout { grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: 30px; }
-  body[data-page="experienced"] .hero h1 { font-size: clamp(1.8rem, 3.5vw, 2.5rem); }
-  body[data-page="experienced"] .hero .button-row .button { min-width: 0; width: 100%; font-size: .83rem; }
   body[data-page="experienced"] .standard-panel { padding-inline: 22px; }
   body[data-page="experienced"] .standard-panel h3 { font-size: 1.4rem; }
   body[data-page="experienced"] .standard-rates strong { font-size: 1.7rem; }
@@ -264,7 +225,6 @@ body[data-page="experienced"] .dialog-message { border-radius: 14px; background:
   body[data-page="experienced"] .standard-panel h4 br { display: initial; }
   body[data-page="experienced"] .standard-rates { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
   body[data-page="experienced"] .standard-panel p { font-size: .9rem; }
-  body[data-page="experienced"] .reward-reference-mobile { width: min(calc(100% - 44px), 500px); }
   body[data-page="experienced"] .work-support .info-grid { grid-template-columns: 1fr; max-width: 650px; margin-inline: auto; }
   body[data-page="experienced"] .work-support .info-card { min-height: 0; padding: 27px; }
   body[data-page="experienced"] .work-support .info-card .num { margin-bottom: 16px; }
@@ -272,7 +232,6 @@ body[data-page="experienced"] .dialog-message { border-radius: 14px; background:
   body[data-page="experienced"] .waiting-photo-grid figcaption { padding: 10px; gap: 7px; }
   body[data-page="experienced"] .waiting-photo-grid figcaption span { font-size: .65rem; }
   body[data-page="experienced"] .e-team .split { gap: 35px; }
-  body[data-page="experienced"] .flow { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   body[data-page="experienced"] .store-info__grid { padding: 25px; gap: 20px; }
   body[data-page="experienced"] .store-info__list > div { grid-template-columns: 82px minmax(0, 1fr); gap: 11px; }
 }
@@ -284,26 +243,8 @@ body[data-page="experienced"] .dialog-message { border-radius: 14px; background:
   body[data-page="experienced"] { --e-space: 72px; }
   body[data-page="experienced"] .container { width: min(calc(100% - 40px), 1120px); }
   body[data-page="experienced"] [id] { scroll-margin-top: 86px; }
-  body[data-page="experienced"] .nav-links { background: #fff9f4; border-color: #ddc6b1; box-shadow: 0 10px 20px rgba(102,67,41,.06); }
+  body[data-page="experienced"] .nav-links { background: #f7f3ec; border-color: #ddc6b1; box-shadow: 0 10px 20px rgba(102,67,41,.06); }
   body[data-page="experienced"] .button { font-size: .86rem; }
-  body[data-page="experienced"] .hero--reference { padding-block: 22px 42px; }
-  body[data-page="experienced"] .hero-mobile-jump { display: flex; position: static; min-height: 38px; width: fit-content; max-width: calc(100% - 40px); margin: 0 auto 26px; padding: 7px 16px; background: rgba(255,253,249,.8); color: #8b6153; border: 1px solid #e6cfc1; border-radius: 50px; font-size: .7rem; font-weight: 500; }
-  body[data-page="experienced"] .hero--reference .hero-reference-layout { display: grid; grid-template-columns: minmax(0, 1fr); gap: 27px; width: min(calc(100% - 40px), 520px); padding: 0; }
-  body[data-page="experienced"] .hero--reference .hero-content { display: contents; padding: 0; }
-  body[data-page="experienced"] .e-hero-heading { grid-column: 1; grid-row: 1; text-align: center; }
-  body[data-page="experienced"] .hero .eyebrow { font-size: .61rem; margin-bottom: 17px; }
-  body[data-page="experienced"] .hero h1 { margin-bottom: 0; font-size: clamp(1.75rem, 7.2vw, 2.6rem); line-height: 1.65; }
-  body[data-page="experienced"] .hero-art { grid-column: 1; grid-row: 2; justify-self: center; width: min(82%, 330px); padding: 8px; border-radius: 125px 125px 20px 20px; }
-  body[data-page="experienced"] .hero-source-image { border-radius: 118px 118px 13px 13px; }
-  body[data-page="experienced"] .e-hero-details { grid-column: 1; grid-row: 3; text-align: center; }
-  body[data-page="experienced"] .hero .lead { max-width: 390px; margin: 0 auto 23px; font-size: .84rem; line-height: 1.95; }
-  body[data-page="experienced"] .hero-price { margin: 0 auto 24px; min-width: 270px; padding: 16px 26px; }
-  body[data-page="experienced"] .hero-price span { font-size: .7rem; }
-  body[data-page="experienced"] .hero-price strong { font-size: 2.7rem; }
-  body[data-page="experienced"] .hero .button-row { justify-content: center; }
-  body[data-page="experienced"] .hero .button-row .button { max-width: 390px; min-height: 57px; padding-inline: 20px; font-size: .84rem; }
-  body[data-page="experienced"] .hero .subnav { align-items: center; gap: 16px; margin-top: 23px; }
-  body[data-page="experienced"] .hero .subnav a { font-size: .7rem; line-height: 1.8; }
   body[data-page="experienced"] .section-heading { margin-bottom: 31px; }
   body[data-page="experienced"] .section-heading h2 { font-size: 1.85rem; line-height: 1.7; }
   body[data-page="experienced"] .sog-introduction { --intro-space: 62px; padding-block: 70px; }
@@ -344,9 +285,6 @@ body[data-page="experienced"] .dialog-message { border-radius: 14px; background:
   body[data-page="experienced"] .standard-beginner-link { font-size: .86rem; }
   body[data-page="experienced"] .e-reward-heading { margin-bottom: 30px; }
   body[data-page="experienced"] .e-reward-heading h2 { font-size: 1.8rem; }
-  body[data-page="experienced"] .reward-reference-mobile { width: min(calc(100% - 40px), 500px); }
-  body[data-page="experienced"] .reward-reference-controls { gap: 14px; min-height: 60px; margin-top: 8px; }
-  body[data-page="experienced"] .reward-reference-controls span { min-width: 135px; font-size: .72rem; }
   body[data-page="experienced"] .work-support .section-heading h2 { font-size: clamp(1.65rem, 6.3vw, 2.05rem); }
   body[data-page="experienced"] .work-support .info-grid { gap: 14px; }
   body[data-page="experienced"] .work-support .info-card,
@@ -393,11 +331,6 @@ body[data-page="experienced"] .dialog-message { border-radius: 14px; background:
   body[data-page="experienced"] .e-team p { font-size: .86rem; }
   body[data-page="experienced"] .e-team .button { width: 100%; font-size: .83rem; }
   body[data-page="experienced"] .e-team .quote-block { padding: 40px 20px; font-size: 1.5rem; }
-  body[data-page="experienced"] .flow { grid-template-columns: 1fr; gap: 12px; }
-  body[data-page="experienced"] .flow > div { display: grid; grid-template-columns: 32px minmax(0, 1fr); gap: 0 16px; padding: 22px; border-radius: 17px; }
-  body[data-page="experienced"] .flow > div::before { grid-row: span 2; padding-top: 2px; font-size: 1.45rem; }
-  body[data-page="experienced"] .flow h3 { margin: 0 0 7px; font-size: 1.05rem; }
-  body[data-page="experienced"] .flow p { font-size: .82rem; }
   body[data-page="experienced"] .store-info__heading h2 { font-size: 2rem; }
   body[data-page="experienced"] .store-info__heading p { font-size: .84rem; }
   body[data-page="experienced"] .store-info__grid { padding: 10px 19px; border-radius: 21px; }
@@ -405,10 +338,6 @@ body[data-page="experienced"] .dialog-message { border-radius: 14px; background:
   body[data-page="experienced"] .store-info__list dt { font-size: .68rem; letter-spacing: 0; }
   body[data-page="experienced"] .store-info__list dd { font-size: .82rem; }
   body[data-page="experienced"] .store-info__url { font-size: .7rem !important; }
-  body[data-page="experienced"] .cta-panel { align-items: center; padding: 42px 23px; border-radius: 75px 75px 22px 22px; gap: 25px; }
-  body[data-page="experienced"] .cta-panel h2 { font-size: clamp(1.5rem, 5.8vw, 2rem); }
-  body[data-page="experienced"] .cta-panel p { font-size: .84rem; }
-  body[data-page="experienced"] .cta-panel .button { width: 100%; min-width: 0; font-size: .78rem; padding-inline: 16px; }
   body[data-page="experienced"] .site-footer { padding-block: 35px; }
   body[data-page="experienced"] .footer-links { gap: 12px 18px; }
   body[data-page="experienced"] .footer-links a { font-size: .74rem; }
@@ -417,4 +346,135 @@ body[data-page="experienced"] .dialog-message { border-radius: 14px; background:
 @media (prefers-reduced-motion: reduce) {
   body[data-page="experienced"] .button:hover,
   body[data-page="experienced"] .button:focus-visible { transform: none; }
+}
+
+/* Champagne renewal: 画像は原本を保持し、CSSの窓で承認部分だけを表示。 */
+body[data-page="experienced"] .hero--reference {
+  position: relative; min-height: 0; padding: 0; color: var(--e-ink);
+  background: radial-gradient(ellipse at 16% 26%, #fffdf9 10%, transparent 65%),
+    linear-gradient(27deg, #ddd2c3 0%, #faf7f1 17%, #e9e0d4 21%, #fffdf9 30%, #f7f3ec 65%, #ddd2c3);
+}
+body[data-page="experienced"] .hero--reference .hero-reference-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: center; gap: 0; width: min(100%, 1400px); max-width: 1400px; padding: 0; }
+body[data-page="experienced"] .hero--reference .hero-content { position: relative; z-index: 1; grid-column: 1; grid-row: 1; min-width: 0; width: 100%; padding: 64px 24px 64px max(32px, 6vw); }
+body[data-page="experienced"] .hero .eyebrow { margin-bottom: 24px; color: #8b704c; font-size: .65rem; letter-spacing: .25em; }
+body[data-page="experienced"] .hero h1 { margin: 0 0 25px; color: var(--e-ink); font-size: clamp(1.8rem, 3.25vw, 3.4rem); font-weight: 500; line-height: 1.7; letter-spacing: .025em; }
+body[data-page="experienced"] .hero h1 span { display: block; white-space: nowrap; }
+body[data-page="experienced"] .hero h1 span:last-child { color: #8a673e; }
+body[data-page="experienced"] .hero .lead { max-width: 440px; margin-bottom: 25px; color: var(--e-muted); font-size: .9rem; line-height: 2; }
+body[data-page="experienced"] .hero-art { position: relative; grid-column: 2; grid-row: 1; width: 100%; min-width: 0; align-self: stretch; display: flex; align-items: center; background: #e5daca; overflow: hidden; }
+body[data-page="experienced"] .hero-art::after { content: ''; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(90deg, #f7f3ec, transparent 12%); }
+body[data-page="experienced"] .e-hero-portrait { position: relative; width: 100%; aspect-ratio: 512 / 498; overflow: hidden; }
+body[data-page="experienced"] .e-hero-portrait .hero-source-image { position: absolute; width: 200%; max-width: none; height: auto; left: -100%; top: -21.485944%; }
+body[data-page="experienced"] .e-photo-credit { position: absolute; z-index: 1; right: 14px; bottom: 10px; color: #493c35; background: rgba(247,243,236,.86); padding: 2px 7px; font-size: .57rem; }
+body[data-page="experienced"] .hero-price { display: flex; flex-direction: column; width: fit-content; min-width: 300px; margin: 0 0 24px; padding: 15px 25px; border: 1px solid #cdbb9f; border-radius: 4px; background: rgba(255,253,249,.8); }
+body[data-page="experienced"] .hero-price span { color: var(--e-muted); font-size: .72rem; }
+body[data-page="experienced"] .hero-price strong { color: var(--e-ink); font: 500 clamp(2.4rem, 4vw, 3.6rem)/1.4 var(--font-serif); }
+body[data-page="experienced"] .hero .button-row { margin: 0; }
+body[data-page="experienced"] .hero .button-row .button { min-width: min(100%, 340px); }
+body[data-page="experienced"] .hero .subnav { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; margin: 24px 0 0; }
+body[data-page="experienced"] .hero .subnav a { color: var(--e-ink); font-size: .72rem; text-underline-offset: 5px; }
+body[data-page="experienced"] .hero-mobile-jump { display: none; }
+body[data-page="experienced"] .e-hero-guide { margin-block: 30px 36px; padding-inline: 20px; }
+
+/* タイポグラフィと余白を中心に、装飾は細い金線に統一する。 */
+body[data-page="experienced"] .site-header { background: rgba(247,243,236,.96); }
+body[data-page="experienced"] .brand { color: var(--e-ink); }
+body[data-page="experienced"] .button { border-color: #a98b63; background: linear-gradient(115deg, #6a5447, #8a6d50); border-radius: 40px; box-shadow: 0 4px 14px #493c350d; }
+body[data-page="experienced"] .button:hover,
+body[data-page="experienced"] .button:focus-visible { background: #584438; }
+body[data-page="experienced"] .button--outline { background: transparent; color: var(--e-ink); }
+body[data-page="experienced"] .button--outline:hover,
+body[data-page="experienced"] .button--outline:focus-visible { background: #eee7dd; color: var(--e-ink); }
+body[data-page="experienced"] .standard-beginner-link { color: #fff; }
+body[data-page="experienced"] .standard-beginner-link:hover,
+body[data-page="experienced"] .standard-beginner-link:focus-visible { color: #fff; }
+body[data-page="experienced"] .intro-header { padding-block: 35px 42px; }
+body[data-page="experienced"] .intro-philosophy { border-radius: 3px; border-inline: 0; background: linear-gradient(135deg, #f7f3ec, #eee7dd); }
+body[data-page="experienced"] .intro-promise { border-radius: 3px; background: #f7f3ec; }
+body[data-page="experienced"] .standard-gallery { border-radius: 4px; }
+body[data-page="experienced"] .e-standard-photo { position: relative; margin: 0; }
+body[data-page="experienced"] .e-standard-photo .standard-gallery-art { aspect-ratio: 3.2; max-height: 350px; object-position: center 40%; }
+body[data-page="experienced"] .e-standard-photo figcaption,
+body[data-page="experienced"] .e-contact-photo figcaption { position: absolute; right: 12px; bottom: 10px; padding: 2px 8px; background: #f7f3ece6; color: var(--e-ink); font-size: .6rem; }
+body[data-page="experienced"] .work-support .info-card { border-radius: 3px; border-top-color: var(--e-gold); }
+body[data-page="experienced"] .simulation-case { border-radius: 4px; }
+body[data-page="experienced"] .simulation-calculation { border-radius: 4px; }
+body[data-page="experienced"] .waiting-video,
+body[data-page="experienced"] .waiting-video video,
+body[data-page="experienced"] .waiting-photo-grid figure { border-radius: 4px; }
+body[data-page="experienced"] .e-team .quote-block { border-radius: 3px; border-inline: 0; background: #f7f3ec; }
+body[data-page="experienced"] .store-info__grid { border-radius: 4px; }
+
+/* 3面を全端末で縦並びに。各画像の幅の3分の1を表示する。 */
+body[data-page="experienced"] .reward-reference { background: radial-gradient(ellipse at 10% 30%, #fffdf8, transparent 60%), #eee7dd; }
+body[data-page="experienced"] .e-reward-stack { display: grid; grid-template-columns: minmax(0, 1fr); gap: 54px; width: min(calc(100% - 48px), 720px); margin-inline: auto; }
+body[data-page="experienced"] .e-reward-piece { min-width: 0; margin: 0; }
+body[data-page="experienced"] .e-reward-piece figcaption { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 8px 20px; margin-bottom: 17px; color: #80613d; }
+body[data-page="experienced"] .e-reward-piece figcaption > span { font: 500 .62rem/1.7 var(--font-sans); letter-spacing: .15em; }
+body[data-page="experienced"] .e-reward-piece h3 { margin: 0; font: 500 1.12rem/1.8 var(--font-serif); }
+body[data-page="experienced"] .e-reward-art { position: relative; width: 100%; aspect-ratio: 2 / 3; overflow: hidden; outline: 1px solid #b99b6866; box-shadow: 0 18px 45px #493c3514; }
+body[data-page="experienced"] .e-reward-art img { position: absolute; display: block; width: 300%; max-width: none; height: auto; top: 0; left: 0; }
+body[data-page="experienced"] .e-reward-art--example img { left: -100%; }
+body[data-page="experienced"] .e-reward-art--message img { left: -200%; }
+body[data-page="experienced"] .e-reward-footer { max-width: 720px; margin-top: 28px; text-align: center; }
+body[data-page="experienced"] .e-reward-footer .fine-print { font-size: .72rem; text-align: left; }
+body[data-page="experienced"] .e-reward-footer > .button { margin-top: 27px; }
+
+/* 最後も人物を主役に。案内役は小さく添える。 */
+body[data-page="experienced"] .e-contact { background: linear-gradient(130deg, #f7f3ec, #ddd2c3); }
+body[data-page="experienced"] .e-contact-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 60px; align-items: center; }
+body[data-page="experienced"] .e-contact-copy h2 { margin-bottom: 25px; font-size: clamp(2rem, 3.1vw, 3rem); line-height: 1.75; }
+body[data-page="experienced"] .e-contact-copy > p { margin-bottom: 30px; color: var(--e-muted); font-size: .9rem; line-height: 2; }
+body[data-page="experienced"] .e-contact-photo { position: relative; margin: 0; height: 100%; min-height: 560px; }
+body[data-page="experienced"] .e-contact-photo > img { width: 100%; height: 100%; min-height: 560px; object-fit: cover; object-position: 90% center; }
+body[data-page="experienced"] .e-contact .e-help-guide { margin-left: 0; }
+body[data-page="experienced"] .mobile-cta { background: #f7f3ecf7; }
+
+@media (min-width: 761px) {
+  body[data-page="experienced"] .hero-art .e-hero-portrait { position: absolute; inset: 0; width: 100%; height: 100%; aspect-ratio: auto; }
+  body[data-page="experienced"] .e-hero-portrait .hero-source-image { width: auto; height: 308.433735%; left: 50%; transform: translateX(-75%); }
+}
+
+@media (max-width: 1050px) and (min-width: 761px) {
+  body[data-page="experienced"] .hero--reference .hero-content { padding: 40px 22px; }
+  body[data-page="experienced"] .hero h1 { font-size: clamp(1.65rem, 3.25vw, 2.3rem); }
+  body[data-page="experienced"] .hero .button-row .button { font-size: .72rem; padding-inline: 16px; }
+  body[data-page="experienced"] .hero-price { min-width: 0; }
+  body[data-page="experienced"] .e-contact-layout { gap: 30px; }
+  body[data-page="experienced"] .e-contact-copy .button { font-size: .74rem; padding-inline: 18px; }
+}
+@media (max-width: 760px) {
+  body[data-page="experienced"] .hero--reference { padding-top: 20px; }
+  body[data-page="experienced"] .hero-mobile-jump { display: block; position: static; width: fit-content; max-width: calc(100% - 40px); margin: 0 auto 23px; padding: 7px 16px; border: 1px solid #cdbb9f; border-radius: 30px; color: var(--e-ink); font-size: .68rem; background: #fffdf8b3; }
+  body[data-page="experienced"] .hero--reference .hero-reference-layout { grid-template-columns: minmax(0, 1fr); gap: 0; width: 100%; }
+  body[data-page="experienced"] .hero--reference .hero-content { display: contents; padding: 0; }
+  body[data-page="experienced"] .e-hero-heading { grid-column: 1; grid-row: 1; padding: 0 20px 26px; text-align: center; }
+  body[data-page="experienced"] .hero .eyebrow { font-size: .58rem; margin-bottom: 14px; }
+  body[data-page="experienced"] .hero h1 { margin: 0; font-size: clamp(1.75rem, 7.4vw, 2.8rem); line-height: 1.7; }
+  body[data-page="experienced"] .hero-art { grid-column: 1; grid-row: 2; width: 100%; max-width: 520px; justify-self: center; background: transparent; }
+  body[data-page="experienced"] .hero-art::after { background: linear-gradient(0deg, #f7f3ec, transparent 13%); }
+  body[data-page="experienced"] .e-hero-details { grid-column: 1; grid-row: 3; padding: 30px 20px 38px; background: #f7f3ec; text-align: center; }
+  body[data-page="experienced"] .hero .lead { max-width: 390px; margin: 0 auto 23px; font-size: .84rem; }
+  body[data-page="experienced"] .hero-price { margin: 0 auto 24px; min-width: 270px; }
+  body[data-page="experienced"] .hero-price strong { font-size: 2.75rem; }
+  body[data-page="experienced"] .hero .button-row { justify-content: center; }
+  body[data-page="experienced"] .hero .button-row .button { min-width: 0; width: 100%; max-width: 390px; padding-inline: 16px; font-size: .8rem; }
+  body[data-page="experienced"] .hero .subnav { align-items: center; gap: 17px; }
+  body[data-page="experienced"] .hero .subnav a { font-size: .68rem; }
+  body[data-page="experienced"] .e-hero-guide { margin-block: 0 32px; }
+  body[data-page="experienced"] .intro-header { padding-block: 20px 30px; }
+  body[data-page="experienced"] .e-standard-photo .standard-gallery-art { aspect-ratio: 1.35; max-height: none; object-position: 58% center; }
+  body[data-page="experienced"] .e-reward-stack { width: calc(100% - 24px); max-width: 520px; gap: 34px; }
+  body[data-page="experienced"] .e-reward-piece figcaption { margin-inline: 8px; margin-bottom: 12px; }
+  body[data-page="experienced"] .e-reward-piece figcaption > span { font-size: .52rem; }
+  body[data-page="experienced"] .e-reward-piece h3 { font-size: .9rem; }
+  body[data-page="experienced"] .e-reward-footer > .button { width: 100%; font-size: .78rem; padding-inline: 15px; }
+  body[data-page="experienced"] .e-contact-layout { grid-template-columns: 1fr; gap: 35px; }
+  body[data-page="experienced"] .e-contact-copy { text-align: center; }
+  body[data-page="experienced"] .e-contact-copy h2 { font-size: 2rem; }
+  body[data-page="experienced"] .e-contact-copy > p { font-size: .86rem; }
+  body[data-page="experienced"] .e-contact-copy > .button { width: 100%; font-size: .79rem; padding-inline: 14px; }
+  body[data-page="experienced"] .e-contact .e-help-guide { margin-inline: auto; }
+  body[data-page="experienced"] .e-contact-photo { min-height: 0; }
+  body[data-page="experienced"] .e-contact-photo > img { min-height: 0; height: auto; aspect-ratio: 4 / 3; object-position: 55% center; }
 }
