@@ -14,6 +14,16 @@ body[data-page="experienced"] .top-a-hero__visual {
   background: #d9c5a8;
 }
 
+/* Narrow viewports crop the photo toward the face, leaving a dark area behind the copy. */
+body[data-page="experienced"] .top-a-hero__visual::after {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(0deg, rgba(34, 22, 17, .68), rgba(34, 22, 17, .25) 36%, transparent 72%);
+  content: "";
+}
+
 body[data-page="experienced"] .top-a-hero__media {
   position: absolute;
   z-index: -1;
@@ -50,28 +60,28 @@ body[data-page="experienced"] .top-a-hero__copy {
   border: 0;
   background: none;
   box-shadow: none;
-  text-shadow: 0 1px 5px rgba(255, 251, 244, .9), 0 0 14px rgba(255, 251, 244, .6);
+  text-shadow: 0 2px 12px rgba(25, 16, 13, .72), 0 1px 2px rgba(25, 16, 13, .85);
 }
 
 body[data-page="experienced"] .top-a-hero__copy .top-a-kicker {
   margin-bottom: 16px;
-  color: #6d503a;
+  color: #ffedcf;
   font-size: .59rem;
   letter-spacing: .19em;
 }
 
 body[data-page="experienced"] .top-a-hero__copy h1 {
-  color: var(--top-a-cocoa);
+  color: #fffaf2;
   font-size: clamp(1.98rem, 8.15vw, 2.55rem);
   line-height: 1.46;
   letter-spacing: .02em;
 }
 
-body[data-page="experienced"] .top-a-hero__copy h1 em { color: #936a3e; }
+body[data-page="experienced"] .top-a-hero__copy h1 em { color: #f6d393; }
 
 body[data-page="experienced"] .top-a-hero__lead {
   margin-top: 16px;
-  color: #4e4035;
+  color: #fff7eb;
   font-size: .8rem;
   line-height: 1.9;
 }
@@ -176,7 +186,18 @@ body[data-page="experienced"] .top-a-hero__guide p strong {
   body[data-page="experienced"] .top-a-hero__guide .e-help-mascot { flex-basis: 144px; width: 144px; height: 173px; }
 }
 
+@media (min-width: 620px) and (max-width: 1000px) {
+  /* This crop is light behind the copy, so keep the dark desktop palette here. */
+  body[data-page="experienced"] .top-a-hero__visual::after { content: none; }
+  body[data-page="experienced"] .top-a-hero__copy { text-shadow: 0 1px 8px rgba(255, 251, 244, .9); }
+  body[data-page="experienced"] .top-a-hero__copy .top-a-kicker { color: #6d503a; }
+  body[data-page="experienced"] .top-a-hero__copy h1 { color: var(--top-a-cocoa); }
+  body[data-page="experienced"] .top-a-hero__copy h1 em { color: #936a3e; }
+  body[data-page="experienced"] .top-a-hero__lead { color: #4e4035; }
+}
+
 @media (min-width: 1001px) {
+  body[data-page="experienced"] .top-a-hero__visual::after { content: none; }
   body[data-page="experienced"] .top-a-hero__visual,
   body[data-page="experienced"] .top-a-hero__inner { min-height: clamp(600px, 48vw, 720px); }
 

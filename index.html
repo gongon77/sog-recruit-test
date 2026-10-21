@@ -19,6 +19,8 @@
   <link rel="stylesheet" href="top-gold-wordmark.css?v=1">
   <link rel="stylesheet" href="mobile-menu.css?v=2">
   <link rel="stylesheet" href="line-cta.css?v=2">
+  <link rel="stylesheet" href="top-team.css?v=1">
+  <link rel="stylesheet" href="body-type-plus-2.css?v=1">
   <script defer src="config.js"></script><script defer src="main.js?v=3"></script><script defer src="animations.js?v=2"></script><script defer src="petals.js?v=1"></script>
 </head>
 <body data-page="experienced">
@@ -254,7 +256,46 @@
   </div>
 </section>
 
-    <section class="section section--ivory e-team"><div class="container split"><div class="reveal"><span class="eyebrow">OUR SUPPORT TEAM</span><h2>働くあなたを支える、<br>私たちのチーム。</h2><p>代表・店長・男性スタッフ・女性スタッフ。私たちが皆さんをサポートします。</p><a class="button button--outline" href="staff.html">サポートスタッフを見る →</a></div><div class="quote-block reveal" data-delay="1">小さな不安も、<br>私たちに聞かせてください。</div></div></section>
+    <section class="section section--ivory e-team" aria-labelledby="e-team-title">
+      <div class="container e-team__inner">
+        <div class="e-team__heading reveal">
+          <span class="eyebrow">OUR SUPPORT TEAM</span>
+          <h2 id="e-team-title">働くあなたを支える、<br>私たちのチーム。</h2>
+          <p>代表・店長・女性スタッフ。私たちが皆さんをサポートします。</p>
+        </div>
+        <div class="e-team__grid" role="group" aria-label="代表、店長、女性スタッフの紹介">
+          <article class="e-team-card reveal">
+            <a class="e-team-card__link" href="staff.html#staff-representative-title">
+              <div class="e-team-card__visual">
+                <div class="e-team-card__art e-team-card__art--representative" aria-hidden="true"></div>
+                <div class="e-team-card__role"><span>REPRESENTATIVE</span><h3>代表</h3></div>
+              </div>
+              <div class="e-team-card__body"><strong>店舗運営・環境づくり</strong><p>働きやすい環境を日々考え、改善を重ねています。</p><span class="e-team-card__more">詳しく見る <span aria-hidden="true">→</span></span></div>
+            </a>
+          </article>
+          <article class="e-team-card reveal" data-delay="1">
+            <a class="e-team-card__link" href="staff.html#staff-manager-title">
+              <div class="e-team-card__visual">
+                <div class="e-team-card__art e-team-card__art--manager" aria-hidden="true"></div>
+                <div class="e-team-card__role"><span>MANAGER</span><h3>店長</h3></div>
+              </div>
+              <div class="e-team-card__body"><strong>日々の相談・シフト対応</strong><p>お仕事の悩みや働き方の希望を、一緒に考えます。</p><span class="e-team-card__more">詳しく見る <span aria-hidden="true">→</span></span></div>
+            </a>
+          </article>
+          <article class="e-team-card reveal" data-delay="2">
+            <a class="e-team-card__link" href="staff.html#staff-female-title">
+              <div class="e-team-card__visual">
+                <div class="e-team-card__art e-team-card__art--female" aria-hidden="true"></div>
+                <div class="e-team-card__role"><span>FEMALE STAFF</span><h3>女性スタッフ</h3></div>
+              </div>
+              <div class="e-team-card__body"><strong>女性目線の相談・サポート</strong><p>接客のことも、少しデリケートなお悩みも聞かせてください。</p><span class="e-team-card__more">詳しく見る <span aria-hidden="true">→</span></span></div>
+            </a>
+          </article>
+        </div>
+        <p class="e-team__closing reveal">小さな不安も、私たちに聞かせてください。</p>
+        <a class="button button--outline e-team__cta reveal" href="staff.html">サポートスタッフを見る <span aria-hidden="true">→</span></a>
+      </div>
+    </section>
 <!-- 経験者TOPのスタッフ案内直後に挿入。既存の .e-first-steps を置き換える。 -->
 <svg class="e-help-symbols" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><defs>
   <symbol id="e-help-heart" viewBox="0 0 24 24"><path d="M12 20S3 14.5 3 8.5A4.5 4.5 0 0 1 12 7a4.5 4.5 0 0 1 9 1.5C21 14.5 12 20 12 20Z"/></symbol>
