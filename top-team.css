@@ -1,4 +1,4 @@
-/* 経験者TOP: スタッフ紹介への導入。提供の人物素材は元画像を変更しない。 */
+/* 経験者TOP: スタッフ紹介ページで使う、提供された最新の人物素材を共有する。 */
 body[data-page="experienced"] .e-team {
   --team-ink: #493b30;
   --team-gold: #a78452;
@@ -101,21 +101,21 @@ body[data-page="experienced"] .e-team-card__art {
 body[data-page="experienced"] .e-team-card:hover .e-team-card__art { transform: scale(1.035); }
 
 body[data-page="experienced"] .e-team-card__art--representative {
-  background-image: url("staff-representative.png");
+  background-image: url("representative-provided.png");
   background-size: cover;
-  background-position: center 38%;
+  background-position: center 29%;
 }
 
 body[data-page="experienced"] .e-team-card__art--manager {
-  background-image: url("staff-manager.png");
-  background-size: cover;
-  background-position: center 38%;
+  background-image: url("manager-provided.png");
+  background-size: 200% auto;
+  background-position: right 38%;
 }
 
 body[data-page="experienced"] .e-team-card__art--female {
-  background-image: url("staff-support-h.png");
-  background-size: cover;
-  background-position: center 38%;
+  background-image: url("team-provided.png");
+  background-size: 200% auto;
+  background-position: right 35%;
 }
 
 body[data-page="experienced"] .e-team-card__role {
