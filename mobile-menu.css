@@ -1,0 +1,131 @@
+/* 4ページ共通のモバイルメニュー。ページを左へ送り、右側の花柄を見せる。 */
+.site-menu-drawer { display: none; }
+
+@media (max-width: 760px) {
+  :root { --menu-drawer-width: min(80vw, 320px); }
+
+  .menu-toggle {
+    display: grid;
+    place-items: center;
+    flex: 0 0 46px;
+    padding: 0;
+    position: relative;
+  }
+  .menu-toggle__lines,
+  .menu-toggle__lines::before,
+  .menu-toggle__lines::after {
+    display: block;
+    width: 21px;
+    height: 2px;
+    border-radius: 2px;
+    background: currentColor;
+    transition: transform .3s ease, background-color .3s ease;
+  }
+  .menu-toggle__lines { position: relative; }
+  .menu-toggle__lines::before,
+  .menu-toggle__lines::after { content: ""; position: absolute; left: 0; top: 0; }
+  .menu-toggle__lines::before { transform: translateY(-7px); }
+  .menu-toggle__lines::after { transform: translateY(7px); }
+  .menu-toggle[aria-expanded="true"] .menu-toggle__lines { background: transparent; }
+  .menu-toggle[aria-expanded="true"] .menu-toggle__lines::before { transform: rotate(45deg); }
+  .menu-toggle[aria-expanded="true"] .menu-toggle__lines::after { transform: rotate(-45deg); }
+
+  body > .site-header,
+  body > main,
+  body > .site-footer,
+  body > .mobile-cta {
+    transition: transform .3s cubic-bezier(.22, .61, .36, 1);
+  }
+  body.menu-open > .site-header,
+  body.menu-open > main,
+  body.menu-open > .site-footer,
+  body.menu-open > .mobile-cta {
+    transform: translate3d(calc(-1 * var(--menu-drawer-width)), 0, 0);
+  }
+  html.menu-open,
+  body.menu-open { overflow: hidden; }
+
+  .site-menu-drawer {
+    position: fixed;
+    z-index: 50;
+    top: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    width: var(--menu-drawer-width);
+    height: 100vh;
+    height: 100dvh;
+    padding: max(82px, env(safe-area-inset-top) + 62px) 24px 32px;
+    overflow-y: auto;
+    border-left: 1px solid rgba(129, 89, 50, .22);
+    background-color: #ead8be;
+    background-image: linear-gradient(145deg, rgba(244, 232, 213, .86), rgba(224, 199, 168, .77)), url("floral-gold-photo.png");
+    background-size: cover;
+    background-position: center;
+    color: #4b3627;
+    box-shadow: -14px 0 36px rgba(53, 35, 21, .14);
+    opacity: 0;
+    visibility: hidden;
+    transform: translate3d(12px, 0, 0);
+    transition: opacity .3s ease, transform .3s ease, visibility 0s linear .3s;
+  }
+  body.menu-open .site-menu-drawer {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    transition-delay: 0s;
+  }
+  .site-menu-drawer__eyebrow {
+    margin: 0 0 30px;
+    padding-bottom: 17px;
+    border-bottom: 1px solid rgba(110, 75, 43, .35);
+    color: #80592f;
+    font: 600 .68rem/1.6 var(--font-sans);
+    letter-spacing: .25em;
+  }
+  .site-menu-drawer__links { display: flex; flex-direction: column; align-items: stretch; }
+  .site-menu-drawer__links a {
+    display: block;
+    padding: 17px 0;
+    border-bottom: 1px solid rgba(110, 75, 43, .23);
+    color: #4b3627;
+    font: 500 clamp(.98rem, 4vw, 1.16rem)/1.55 var(--font-serif);
+    letter-spacing: .025em;
+    text-decoration: none;
+    opacity: 0;
+    transform: translate3d(12px, 0, 0);
+    transition: opacity .3s ease, transform .3s ease, color .2s ease;
+  }
+  body.menu-open .site-menu-drawer__links a { opacity: 1; transform: none; }
+  body.menu-open .site-menu-drawer__links a:nth-child(1) { transition-delay: .04s; }
+  body.menu-open .site-menu-drawer__links a:nth-child(2) { transition-delay: .08s; }
+  body.menu-open .site-menu-drawer__links a:nth-child(3) { transition-delay: .12s; }
+  body.menu-open .site-menu-drawer__links a:nth-child(4) { transition-delay: .16s; }
+  .site-menu-drawer__links a:hover,
+  .site-menu-drawer__links a:focus-visible,
+  .site-menu-drawer__links a[aria-current="page"] { color: #98642d; }
+  .site-menu-drawer__links a[aria-current="page"] { font-weight: 700; }
+  .site-menu-drawer__signature {
+    margin: auto 0 0;
+    padding-top: 34px;
+    color: #89633e;
+    font: 500 .63rem/1.8 var(--font-serif);
+    letter-spacing: .14em;
+  }
+}
+
+@media (max-width: 360px) {
+  :root { --menu-drawer-width: min(76vw, 320px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .menu-toggle__lines,
+  .menu-toggle__lines::before,
+  .menu-toggle__lines::after,
+  body > .site-header,
+  body > main,
+  body > .site-footer,
+  body > .mobile-cta,
+  .site-menu-drawer,
+  .site-menu-drawer__links a { transition-duration: .01ms !important; transition-delay: 0ms !important; }
+}

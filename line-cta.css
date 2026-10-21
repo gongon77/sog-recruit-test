@@ -1,0 +1,25 @@
+/* LINE相談だけに共通のブランドカラーを適用する。通常のページ移動ボタンは対象外。 */
+:root {
+  --line-cta-green: #07863c;
+  --line-cta-green-hover: #056b31;
+}
+
+body[data-page] .button[data-line][type="button"] {
+  border-color: var(--line-cta-green);
+  background: var(--line-cta-green);
+  color: #fff;
+  box-shadow: 0 6px 18px rgba(0, 124, 52, .22);
+}
+
+body[data-page] .button[data-line][type="button"]:hover,
+body[data-page] .button[data-line][type="button"]:focus-visible {
+  border-color: var(--line-cta-green-hover);
+  background: var(--line-cta-green-hover);
+  color: #fff;
+  box-shadow: 0 8px 22px rgba(0, 115, 47, .28);
+}
+
+body[data-page] .button[data-line][type="button"]:focus-visible {
+  outline: 3px solid #17643a;
+  outline-offset: 3px;
+}

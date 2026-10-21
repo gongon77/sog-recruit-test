@@ -1,0 +1,66 @@
+/* TOPのヘッダー用。ブランド名は画像にせず、横一列の編集可能な文字で表現する。 */
+body[data-page="experienced"] .site-header .brand--gold {
+  flex: 0 0 auto;
+  min-width: 0;
+  width: fit-content;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+body[data-page="experienced"] .site-header .brand__wordmark {
+  display: block;
+  width: fit-content;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.18rem, 1.88vw, 1.56rem);
+  font-weight: 600;
+  line-height: 1.06;
+  letter-spacing: .085em;
+  color: #9a672e;
+  background: linear-gradient(
+    180deg,
+    #745021 0%,
+    #c48d45 13%,
+    #fff0bf 30%,
+    #9e642a 45%,
+    #e9c879 59%,
+    #7b4f20 79%,
+    #ba8743 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: .14px rgba(107, 68, 29, .6);
+  filter: drop-shadow(0 1px 0 rgba(255, 252, 242, .92));
+}
+
+body[data-page="experienced"] .site-header .brand--gold small {
+  color: #886942;
+  margin-top: 4px;
+  font-size: .57rem;
+  letter-spacing: .3em;
+}
+
+body[data-page="experienced"] .site-header .brand--gold:hover .brand__wordmark,
+body[data-page="experienced"] .site-header .brand--gold:focus-visible .brand__wordmark {
+  filter: drop-shadow(0 1px 1px rgba(151, 94, 28, .38));
+}
+
+@media (max-width: 760px) {
+  body[data-page="experienced"] .site-header .header-inner { gap: 12px; }
+  body[data-page="experienced"] .site-header .brand__wordmark {
+    font-size: clamp(1rem, 4.5vw, 1.2rem);
+    letter-spacing: .057em;
+  }
+  body[data-page="experienced"] .site-header .brand--gold small {
+    font-size: .5rem;
+    letter-spacing: .24em;
+  }
+}
+
+@media (max-width: 360px) {
+  body[data-page="experienced"] .site-header .header-inner { width: calc(100% - 28px); gap: 9px; }
+  body[data-page="experienced"] .site-header .brand__wordmark {
+    font-size: .94rem;
+    letter-spacing: .04em;
+  }
+}

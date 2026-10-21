@@ -32,7 +32,7 @@ body[data-page="staff"] .button--small { min-height: 42px; padding: 9px 17px; fo
 .staff-symbols { position: absolute; width: 0; height: 0; overflow: hidden; }
 .staff-icon { width: 26px; height: 26px; flex: 0 0 auto; fill: none; stroke: currentColor; stroke-width: 1.4; stroke-linecap: round; stroke-linejoin: round; }
 .staff-eyebrow { display: block; margin: 0 0 18px; color: #896545; font: 600 .68rem/1.8 var(--font-sans); letter-spacing: .22em; }
-.staff-hero { padding-block: clamp(65px, 7vw, 105px); background: radial-gradient(ellipse at 85% 65%, #f5dedb, transparent 58%), linear-gradient(135deg,#fffcf8,#faf0e9); }
+.staff-hero { padding-block: clamp(65px, 7vw, 105px); background: linear-gradient(125deg, #fffaf2 0%, #f6e7d5 62%, #ecd2b7 100%); }
 .staff-hero-layout { display: grid; grid-template-columns: 1.2fr .8fr; gap: clamp(50px, 7vw, 110px); align-items: center; }
 .staff-hero-intro { font: 400 1.07rem/1.8 var(--font-serif); margin-bottom: 23px; }
 .staff-hero h1 { font: 500 clamp(2.4rem, 4.2vw, 4rem)/1.5 var(--font-serif); letter-spacing: .035em; margin-bottom: 27px; }
@@ -40,7 +40,7 @@ body[data-page="staff"] .button--small { min-height: 42px; padding: 9px 17px; fo
 .staff-lead { font-size: .98rem; line-height: 2; margin-bottom: 25px; }
 .staff-text-link { display: inline-block; color: #886143; font-size: .84rem; text-underline-offset: 6px; }
 .staff-text-link > span { margin-left: 12px; }
-.staff-welcome { position: relative; border: 1px solid #ddc8b5; border-radius: 150px 150px 22px 22px; padding: 46px 24px 38px; text-align: center; background: rgba(255,253,249,.88); box-shadow: 0 18px 45px rgba(126,79,46,.045); }
+.staff-welcome { position: relative; border: 1px solid #c9a77f; border-radius: 150px 150px 22px 22px; padding: 46px 24px 38px; text-align: center; background: #fffdf9; box-shadow: 0 18px 45px rgba(126,79,46,.12); }
 .staff-welcome-icon { display: flex; align-items: center; justify-content: center; width: 47px; height: 47px; margin: 0 auto 24px; border-radius: 50%; color: #ad7883; background: #f8e9e7; }
 .staff-welcome > .staff-eyebrow { font-size: .6rem; letter-spacing: .12em; }
 .staff-welcome h2 { font: 500 clamp(1.35rem, 2vw, 1.85rem)/1.8 var(--font-serif); margin-bottom: 22px; letter-spacing: .025em; }
@@ -64,7 +64,16 @@ body[data-page="staff"] .button--small { min-height: 42px; padding: 9px 17px; fo
 .staff-photo.staff-photo--confirmed { display: block; height: auto; margin: 0; background: #f4eee7; }
 .staff-photo--confirmed img { display: block; width: 100%; height: auto; }
 .staff-photo--confirmed .staff-photo-index { position: static; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 5px 12px; padding: 12px 24px; background: #f4eee7; color: #775c48; }
-.staff-photo-credit { font-size: .58rem; font-weight: 400; letter-spacing: .02em; color: var(--staff-muted); }
+/* 提供イラストを全体表示。男女スタッフは左右それぞれの正方形パネルを見せる。 */
+.staff-photo--provided { display: block; margin: 0; background: #f4eee7; }
+.staff-photo-art { width: 100%; aspect-ratio: 1; background-repeat: no-repeat; background-color: #f7ede2; }
+.staff-photo--representative .staff-photo-art { background-image: url('representative-provided.png'); background-size: cover; background-position: center 18%; }
+.staff-photo--manager .staff-photo-art { background-image: url('manager-provided.png'); background-size: contain; background-position: center; }
+.staff-photo--male .staff-photo-art,
+.staff-photo--female .staff-photo-art { background-image: url('team-provided.png'); background-size: 200% auto; }
+.staff-photo--male .staff-photo-art { background-position: left center; }
+.staff-photo--female .staff-photo-art { background-position: right center; }
+.staff-photo--provided .staff-photo-index { position: static; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 5px 12px; padding: 12px 24px; background: #f4eee7; color: #775c48; }
 .staff-profile-body { padding: 34px 36px 35px; }
 .staff-role { display: flex; align-items: baseline; flex-wrap: wrap; gap: 8px 18px; padding-bottom: 20px; border-bottom: 1px solid var(--staff-line); }
 .staff-role > span { color: #987452; font: 600 .59rem/1.7 var(--font-sans); letter-spacing: .1em; order: 2; }
@@ -78,6 +87,10 @@ body[data-page="staff"] .button--small { min-height: 42px; padding: 9px 17px; fo
 .staff-profile-copy { font-size: 1rem; line-height: 2; overflow-wrap: break-word; }
 .staff-profile-copy p { margin: 0 0 1.4em; }
 .staff-profile-copy p:last-child { margin-bottom: 0; }
+.staff-x-link { display: inline-flex; align-items: center; gap: 10px; min-height: 46px; margin-top: 26px; padding: 10px 18px; border: 1px solid #b99b77; border-radius: 999px; background: #fffaf5; color: #6d503a; text-decoration: none; font-size: .83rem; font-weight: 600; transition: background-color .2s ease, border-color .2s ease, transform .2s ease; }
+.staff-x-link:hover { background: #f3e8da; border-color: #8a6748; transform: translateY(-2px); }
+.staff-x-link:focus-visible { outline: 3px solid #b39061; outline-offset: 3px; }
+.staff-x-mark { font-family: Arial, sans-serif; font-size: 1.1em; line-height: 1; }
 .staff-tags { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; margin: 0; padding: 0; }
 .staff-tags li { font-size: .68rem; color: #8b5a5e; border: 1px solid #e6c6c6; background: #f9eeeb; border-radius: 30px; padding: 5px 12px; }
 .staff-promise { background: linear-gradient(135deg, #faf0eb, #f7e9e4); }
@@ -112,4 +125,4 @@ body[data-page="staff"] .dialog-message { background: #f6eae1; border-radius: 14
   .staff-contact { padding-block: 55px; }.staff-contact-inner { flex-direction: column; align-items: start; gap: 28px; }.staff-contact h2 { font-size: 1.6rem; }.staff-contact p { font-size: .84rem; }.staff-contact .button { min-width: 0; width: 100%; font-size: .85rem; }.staff-contact .staff-eyebrow { font-size: .58rem; }
   body[data-page="staff"] .site-footer { padding-block: 34px; }
 }
-@media (prefers-reduced-motion: reduce) { body[data-page="staff"] .button:hover { transform: none; } }
+@media (prefers-reduced-motion: reduce) { body[data-page="staff"] .button:hover, .staff-x-link:hover { transform: none; } }

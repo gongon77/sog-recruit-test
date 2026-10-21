@@ -3,19 +3,74 @@
   const menuButton = document.querySelector('.menu-toggle');
   const nav = document.getElementById('main-nav');
   if (menuButton && nav) {
-    menuButton.addEventListener('click', () => {
-      const open = menuButton.getAttribute('aria-expanded') !== 'true';
-      menuButton.setAttribute('aria-expanded', String(open));
-      menuButton.setAttribute('aria-label', open ? 'メニューを閉じる' : 'メニューを開く');
-      nav.classList.toggle('is-open', open);
+    const mobile = window.matchMedia('(max-width: 760px)');
+    const drawer = document.createElement('aside');
+    const drawerLinks = document.createElement('nav');
+    const eyebrow = document.createElement('p');
+    const signature = document.createElement('p');
+    drawer.id = 'mobile-menu-panel';
+    drawer.className = 'site-menu-drawer';
+    drawer.setAttribute('aria-hidden', 'true');
+    drawer.inert = true;
+    drawerLinks.className = 'site-menu-drawer__links';
+    drawerLinks.setAttribute('aria-label', 'モバイルメニュー');
+    nav.querySelectorAll('a').forEach(link => drawerLinks.append(link.cloneNode(true)));
+    eyebrow.className = 'site-menu-drawer__eyebrow';
+    eyebrow.textContent = 'MENU / SUPER OTONA GIRLS';
+    signature.className = 'site-menu-drawer__signature';
+    signature.textContent = 'RECRUIT / OSAKA';
+    drawer.append(eyebrow, drawerLinks, signature);
+    document.body.append(drawer);
+    menuButton.setAttribute('aria-controls', drawer.id);
+
+    const pageContent = [
+      document.querySelector('main'),
+      document.querySelector('.site-footer'),
+      document.querySelector('.mobile-cta'),
+      document.querySelector('.site-header .brand'),
+      document.querySelector('.site-header .header-cta')
+    ].filter(Boolean);
+    const drawerItems = [...drawerLinks.querySelectorAll('a')];
+    const isOpen = () => menuButton.getAttribute('aria-expanded') === 'true';
+    const setMenuOpen = open => {
+      const next = Boolean(open && mobile.matches);
+      if (!next && drawer.contains(document.activeElement)) {
+        (mobile.matches ? menuButton : nav.querySelector('a'))?.focus({ preventScroll: true });
+      }
+      menuButton.setAttribute('aria-expanded', String(next));
+      menuButton.setAttribute('aria-label', next ? 'メニューを閉じる' : 'メニューを開く');
+      drawer.setAttribute('aria-hidden', String(!next));
+      drawer.inert = !next;
+      pageContent.forEach(element => { element.inert = next; });
+      document.documentElement.classList.toggle('menu-open', next);
+      document.body.classList.toggle('menu-open', next);
+      if (next) requestAnimationFrame(() => drawerItems[0]?.focus({ preventScroll: true }));
+    };
+
+    menuButton.addEventListener('click', () => setMenuOpen(!isOpen()));
+    drawerLinks.addEventListener('click', event => {
+      if (event.target.closest('a')) setMenuOpen(false);
     });
-    nav.addEventListener('click', event => {
-      if (event.target.closest('a')) {
-        nav.classList.remove('is-open');
-        menuButton.setAttribute('aria-expanded', 'false');
-        menuButton.setAttribute('aria-label', 'メニューを開く');
+    document.addEventListener('pointerdown', event => {
+      if (isOpen() && !drawer.contains(event.target) && !menuButton.contains(event.target)) setMenuOpen(false);
+    });
+    document.addEventListener('keydown', event => {
+      if (!isOpen()) return;
+      if (event.key === 'Escape') {
+        event.preventDefault();
+        setMenuOpen(false);
+      } else if (event.key === 'Tab') {
+        const focusable = [menuButton, ...drawerItems];
+        const current = focusable.indexOf(document.activeElement);
+        const direction = event.shiftKey ? -1 : 1;
+        event.preventDefault();
+        const next = current < 0
+          ? (event.shiftKey ? focusable.length - 1 : 0)
+          : (current + direction + focusable.length) % focusable.length;
+        focusable[next].focus();
       }
     });
+    window.addEventListener('resize', () => { if (!mobile.matches && isOpen()) setMenuOpen(false); });
   }
 
   const dialog = document.getElementById('demo-dialog');

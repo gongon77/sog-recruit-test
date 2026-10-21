@@ -410,15 +410,24 @@ body[data-page="experienced"] .store-info__grid { border-radius: 4px; }
 
 /* 3面を全端末で縦並びに。各画像の幅の3分の1を表示する。 */
 body[data-page="experienced"] .reward-reference { background: radial-gradient(ellipse at 10% 30%, #fffdf8, transparent 60%), #eee7dd; }
-body[data-page="experienced"] .e-reward-stack { display: grid; grid-template-columns: minmax(0, 1fr); gap: 54px; width: min(calc(100% - 48px), 720px); margin-inline: auto; }
+body[data-page="experienced"] .e-reward-stack { display: grid; grid-template-columns: minmax(0, 1fr); gap: 34px; width: min(calc(100% - 24px), 520px); margin-inline: auto; }
 body[data-page="experienced"] .e-reward-piece { min-width: 0; margin: 0; }
 body[data-page="experienced"] .e-reward-piece figcaption { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 8px 20px; margin-bottom: 17px; color: #80613d; }
 body[data-page="experienced"] .e-reward-piece figcaption > span { font: 500 .62rem/1.7 var(--font-sans); letter-spacing: .15em; }
 body[data-page="experienced"] .e-reward-piece h3 { margin: 0; font: 500 1.12rem/1.8 var(--font-serif); }
-body[data-page="experienced"] .e-reward-art { position: relative; width: 100%; aspect-ratio: 2 / 3; overflow: hidden; outline: 1px solid #b99b6866; box-shadow: 0 18px 45px #493c3514; }
+body[data-page="experienced"] .e-reward-art { position: relative; width: 100%; aspect-ratio: 4 / 9; overflow: hidden; outline: 1px solid #b99b6866; box-shadow: 0 18px 45px #493c3514; }
 body[data-page="experienced"] .e-reward-art img { position: absolute; display: block; width: 300%; max-width: none; height: auto; top: 0; left: 0; }
 body[data-page="experienced"] .e-reward-art--example img { left: -100%; }
 body[data-page="experienced"] .e-reward-art--message img { left: -200%; }
+
+@media (min-width: 1100px) {
+  body[data-page="experienced"] .e-reward-stack {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: start;
+    gap: 14px;
+    width: min(calc(100% - 48px), 1080px);
+  }
+}
 body[data-page="experienced"] .e-reward-footer { max-width: 720px; margin-top: 28px; text-align: center; }
 body[data-page="experienced"] .e-reward-footer .fine-print { font-size: .72rem; text-align: left; }
 body[data-page="experienced"] .e-reward-footer > .button { margin-top: 27px; }
@@ -428,8 +437,12 @@ body[data-page="experienced"] .e-contact { background: linear-gradient(130deg, #
 body[data-page="experienced"] .e-contact-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 60px; align-items: center; }
 body[data-page="experienced"] .e-contact-copy h2 { margin-bottom: 25px; font-size: clamp(2rem, 3.1vw, 3rem); line-height: 1.75; }
 body[data-page="experienced"] .e-contact-copy > p { margin-bottom: 30px; color: var(--e-muted); font-size: .9rem; line-height: 2; }
-body[data-page="experienced"] .e-contact-photo { position: relative; margin: 0; height: 100%; min-height: 560px; }
-body[data-page="experienced"] .e-contact-photo > img { width: 100%; height: 100%; min-height: 560px; object-fit: cover; object-position: 90% center; }
+body[data-page="experienced"] .e-contact-photo--brand { position: relative; margin: 0; height: 100%; min-height: 560px; overflow: hidden; background: #dbd0c2; isolation: isolate; }
+body[data-page="experienced"] .e-contact-photo--brand::before { content: ""; position: absolute; z-index: 0; inset: 0; background: url("hero-bold-01-closeup.jpg") 58% center / cover no-repeat; filter: grayscale(1) contrast(1.08); transform: scale(1.02); }
+body[data-page="experienced"] .e-contact-photo--brand::after { content: ""; position: absolute; z-index: 1; inset: 0; pointer-events: none; background: linear-gradient(90deg, rgba(248,244,238,.35), rgba(248,244,238,.06) 75%); }
+body[data-page="experienced"] .e-contact-logo-window { position: absolute; z-index: 2; top: 50%; left: 42%; width: min(76%, 390px); aspect-ratio: 780 / 510; overflow: hidden; transform: translate(-50%, -50%); mix-blend-mode: multiply; -webkit-mask-image: radial-gradient(ellipse at center, #000 53%, transparent 79%); mask-image: radial-gradient(ellipse at center, #000 53%, transparent 79%); }
+body[data-page="experienced"] .e-contact-logo-window img { position: absolute; display: block; top: -52.94%; left: -44.87%; width: 189.36%; height: auto; max-width: none; }
+body[data-page="experienced"] .e-contact-photo--brand figcaption { position: absolute; z-index: 3; right: 12px; bottom: 10px; padding: 2px 8px; background: #f7f3ece6; color: var(--e-ink); font-size: .6rem; }
 body[data-page="experienced"] .e-contact .e-help-guide { margin-left: 0; }
 body[data-page="experienced"] .mobile-cta { background: #f7f3ecf7; }
 
@@ -478,6 +491,7 @@ body[data-page="experienced"] .mobile-cta { background: #f7f3ecf7; }
   body[data-page="experienced"] .e-contact-copy > p { font-size: .86rem; }
   body[data-page="experienced"] .e-contact-copy > .button { width: 100%; font-size: .79rem; padding-inline: 14px; }
   body[data-page="experienced"] .e-contact .e-help-guide { margin-inline: auto; }
-  body[data-page="experienced"] .e-contact-photo { min-height: 0; }
-  body[data-page="experienced"] .e-contact-photo > img { min-height: 0; height: auto; aspect-ratio: 4 / 3; object-position: 55% center; }
+  body[data-page="experienced"] .e-contact-photo--brand { min-height: 0; height: clamp(350px, 92vw, 490px); }
+  body[data-page="experienced"] .e-contact-photo--brand::before { background-position: 59% center; }
+  body[data-page="experienced"] .e-contact-logo-window { left: 41%; width: min(82%, 340px); }
 }

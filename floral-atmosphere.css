@@ -1,0 +1,88 @@
+/* 文字を除いた提供画像由来の花と光。画面を横切る花びらは別レイヤー。 */
+body[data-page] {
+  --floral-wallpaper: url("floral-gold-photo.png");
+  background-color: #f3e9da;
+  background-image: var(--floral-wallpaper);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/* 各セクションは独自の背景色を持つため、写真を薄く重ねて全体に質感を通す。 */
+body[data-page]::before {
+  content: "";
+  position: fixed;
+  z-index: 24;
+  inset: 0;
+  pointer-events: none;
+  background: var(--floral-wallpaper) center center / cover no-repeat;
+  opacity: .27;
+  mix-blend-mode: multiply;
+}
+body[data-page="beginner"]::before,
+body[data-page="staff"]::before { opacity: .18; }
+body[data-page="simulator"]::before { opacity: .2; }
+
+/* 最初のビジュアルは花柄の固定レイヤーと花びらの手前に置き、写真の輪郭を保つ。 */
+body[data-page="experienced"] .top-a-hero,
+body[data-page="beginner"] .b-hero,
+body[data-page="staff"] .staff-hero {
+  position: relative;
+  z-index: 31;
+}
+
+.floral-petals {
+  position: fixed;
+  z-index: 30;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  contain: layout paint;
+}
+.floral-petal {
+  position: absolute;
+  top: 0;
+  left: var(--petal-left);
+  width: var(--petal-size);
+  height: calc(var(--petal-size) * .78);
+  border-radius: 75% 15% 80% 20%;
+  background: radial-gradient(ellipse at 25% 25%, #fff8df 0%, #e5c580 34%, #c19a5e 72%, #a77b48 100%);
+  box-shadow: inset 1px 1px 2px rgba(255,255,255,.75), 0 2px 5px rgba(103,72,37,.12);
+  opacity: 0;
+  transform-origin: 55% 60%;
+  will-change: transform, opacity;
+  animation: floral-petal-fall var(--petal-duration) linear var(--petal-delay) infinite;
+}
+.floral-petal::after {
+  content: "";
+  position: absolute;
+  top: 12%;
+  left: 52%;
+  width: 1px;
+  height: 76%;
+  border-radius: 50%;
+  background: rgba(143, 104, 53, .3);
+  transform: rotate(28deg);
+}
+.floral-petals.is-paused .floral-petal { animation-play-state: paused; }
+
+@keyframes floral-petal-fall {
+  0% { opacity: 0; transform: translate3d(0, -14vh, 0) rotate(0deg); }
+  8% { opacity: .62; }
+  25% { transform: translate3d(var(--petal-sway), 20vh, 0) rotate(105deg); }
+  50% { transform: translate3d(var(--petal-back), 49vh, 0) rotate(205deg); }
+  75% { opacity: .56; transform: translate3d(var(--petal-sway), 80vh, 0) rotate(315deg); }
+  100% { opacity: 0; transform: translate3d(var(--petal-end), 116vh, 0) rotate(430deg); }
+}
+
+@media (max-width: 640px) {
+  body[data-page] { background-position: 16% center; }
+  body[data-page]::before { background-position: 16% center; opacity: .23; }
+  body[data-page="beginner"]::before,
+  body[data-page="staff"]::before { opacity: .14; }
+  .floral-petal { filter: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .floral-petals { display: none; }
+}
+.design-mode .floral-petals { display: none; }

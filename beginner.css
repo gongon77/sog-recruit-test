@@ -38,8 +38,7 @@ body[data-page="beginner"] .button--small { min-height: 42px; padding: 9px 17px;
 .b-eyebrow { display: block; color: #896545; font: 600 .69rem/1.8 var(--font-sans); letter-spacing: .24em; margin-bottom: 17px; }
 .b-hero { background: linear-gradient(170deg, #fffbf7 50%, #f9e6de); }
 .b-hero-visual { min-height: 650px; position: relative; overflow: hidden; }
-.b-hero-visual::after { content: ''; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(90deg, #fffaf5 0%, #fffaf5 34%, rgba(255,250,245,.8) 48%, transparent 70%), linear-gradient(0deg, #fffaf5 0%, transparent 13%); }
-.b-hero-photo { position: absolute; right: 0; top: 0; width: 60%; height: 100%; object-fit: cover; object-position: 68% 35%; }
+.b-hero-photo { position: absolute; right: 0; top: 0; width: 60%; height: 100%; object-fit: cover; object-position: 68% 35%; opacity: 1; filter: none; }
 .b-hero-body { min-height: 650px; position: relative; z-index: 1; display: flex; align-items: center; }
 .b-hero-copy { padding: 55px 0; width: 57%; }
 .b-hero-kicker { font-size: .78rem; margin-bottom: 21px; }
@@ -270,7 +269,6 @@ body[data-page="beginner"] .dialog-message { background: #f6eae1; border-radius:
   body[data-page="beginner"] .nav-links { background: #fff9f4; border-color: #dfc8b5; }
   body[data-page="beginner"] [id] { scroll-margin-top: 80px; }
   .b-hero-visual, .b-hero-body { min-height: 560px; }.b-hero-photo { width: 100%; right: -45px; object-position: 66% 32%; }
-  .b-hero-visual::after { background: linear-gradient(90deg, rgba(255,250,245,.95), rgba(255,250,245,.8) 38%, rgba(255,250,245,0) 73%),linear-gradient(0deg,#fffaf5,transparent 24%); }
   .b-hero-copy { width: 70%; padding: 38px 0 70px; align-self: start; }
   .b-hero h1 { font-size: clamp(2rem,6vw,3.1rem); line-height: 1.5; margin-bottom: 21px; letter-spacing: .02em; }
   .b-hero-name { font-size: .38em; }

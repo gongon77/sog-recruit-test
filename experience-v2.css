@@ -27,15 +27,14 @@ body[data-page="experienced"] .ev-hero-bottom .e-help-guide { justify-content:fl
 .ev-quicklinks a + a { border-left:1px solid var(--ev-line); }
 .ev-quicklinks span { display:grid; place-items:center; width:34px; height:34px; border:1px solid var(--ev-line); border-radius:50%; color:#9d825a; font:italic .78rem/1 Georgia,serif; }
 .ev-concerns { background:linear-gradient(135deg,#f4eee5,#faf7f1); }
-.ev-concerns-layout { display:grid; grid-template-columns:1.15fr .85fr; align-items:center; gap:90px; max-width:1010px; margin:auto; }
-.ev-checks { list-style:none; margin:0 0 28px; padding:0; }
-.ev-checks li { position:relative; padding:16px 0 16px 32px; border-bottom:1px solid var(--ev-line); font-size:.95rem; }
-.ev-checks li::before { content:'✓'; color:#9d7a49; position:absolute; left:2px; font-weight:600; }
-.ev-gentle-message { font:500 1.15rem/1.9 var(--font-serif); margin-bottom:18px; }
-.ev-concerns-photo { margin:0; position:relative; }
-.ev-concerns-photo::before { content:''; position:absolute; inset:12px -12px 12px 12px; border:1px solid #bda483; border-radius:48% 48% 3px 3px; }
-.ev-concerns-photo img { position:relative; width:100%; height:auto; aspect-ratio:.8; object-fit:cover; object-position:78% center; border-radius:48% 48% 3px 3px; }
-.ev-concerns-photo figcaption,.ev-aroma-photo figcaption,.ev-monochrome figcaption { text-align:right; font-size:.61rem; color:#8a796b; margin-top:10px; }
+.ev-concerns-art { max-width:1010px; margin:0 auto; }
+/* ご提供画像の上端にある見出しだけを表示枠で隠し、HTMLの見出しを残す。 */
+.ev-concerns-art__desktop { position:relative; aspect-ratio:1685 / 794; overflow:hidden; }
+.ev-concerns-art__desktop img { display:block; width:100%; height:100%; object-fit:cover; object-position:center bottom; }
+.ev-concerns-art__mobile { display:none; }
+.ev-concerns-art__link { position:absolute; z-index:1; left:7%; bottom:6%; width:31%; height:8%; border-radius:4px; }
+.ev-concerns-art__link:focus-visible { outline:3px solid #8b5b25; outline-offset:3px; background:rgba(255,255,255,.18); }
+.ev-aroma-photo figcaption,.ev-monochrome figcaption { text-align:right; font-size:.61rem; color:#8a796b; margin-top:10px; }
 .ev-story { background:var(--ev-paper); }
 .ev-brand-title { font-size:.72em; letter-spacing:.1em; }
 .ev-story-layout { display:grid; grid-template-columns:1.3fr 1fr; gap:75px; align-items:center; }
@@ -50,7 +49,10 @@ body[data-page="experienced"] .ev-more-copy h3 { font:500 clamp(1.75rem,3vw,2.8r
 .ev-more-photo { align-self:stretch; margin:0; position:relative; min-height:330px; }
 .ev-more-photo img { height:100%; width:100%; object-fit:cover; object-position:72% center; }
 .ev-more-photo::after { content:''; position:absolute; inset:0; background:linear-gradient(90deg,#eee5d9,transparent 25%); }
-.ev-more-photo figcaption,.ev-promise-photo figcaption { position:absolute; right:10px; bottom:10px; z-index:1; font-size:.58rem; color:#6c5a4b; background:rgba(255,251,245,.9); padding:3px 6px; }
+.ev-more-photo--logo { min-height:0; aspect-ratio:1477 / 1065; background:#f4eadb; }
+.ev-more-photo--logo img { display:block; height:100%; object-fit:contain; object-position:center; }
+.ev-more-photo--logo::after { display:none; }
+.ev-more-photo figcaption { position:absolute; right:10px; bottom:10px; z-index:1; font-size:.58rem; color:#6c5a4b; background:rgba(255,251,245,.9); padding:3px 6px; }
 .ev-introduction { background:#f4efe6; }
 .ev-intro-opening { display:grid; grid-template-columns:.75fr 1.25fr; align-items:center; gap:65px; padding-bottom:65px; }
 .ev-aroma-photo { margin:0; }
@@ -59,7 +61,7 @@ body[data-page="experienced"] .ev-more-copy h3 { font:500 clamp(1.75rem,3vw,2.8r
 .ev-monochrome { margin:0; }
 .ev-monochrome-window { aspect-ratio:512/498; position:relative; overflow:hidden; background:#3b3531; }
 .ev-monochrome-window img { position:absolute; max-width:none; width:200%; height:auto; left:-100%; top:-21.485944%; }
-body[data-page="experienced"] .ev-philosophy h3 { font:500 clamp(1.65rem,2.8vw,2.6rem)/1.8 var(--font-serif); margin-bottom:25px; }
+body[data-page="experienced"] .ev-philosophy h2 { margin:0 0 25px; font:500 clamp(1.65rem,2.8vw,2.6rem)/1.8 var(--font-serif); }
 .ev-for-you { padding:50px 0 70px; border-top:1px solid var(--ev-line); }
 .ev-for-you .ev-heading { margin-bottom:32px; }
 .ev-wishes { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); padding:0; margin:0 0 40px; list-style:none; gap:20px; }
@@ -67,24 +69,40 @@ body[data-page="experienced"] .ev-philosophy h3 { font:500 clamp(1.65rem,2.8vw,2
 .ev-wishes li > span { display:flex; gap:15px; align-items:center; color:#b39565; font:italic 1.5rem/1.3 Georgia,serif; margin-bottom:20px; }
 .ev-wishes small { font:500 .58rem/1.5 var(--font-sans); letter-spacing:.12em; }
 .ev-wishes p { font:500 .97rem/1.9 var(--font-serif); margin:0; }
-.ev-promise { display:grid; grid-template-columns:1fr 1fr; background:#eae0d2; }
-.ev-promise-photo { margin:0; position:relative; min-height:440px; }
-.ev-promise-photo img { width:100%; height:100%; object-fit:cover; object-position:52% center; }
-.ev-promise-copy { padding:48px 40px; }
-body[data-page="experienced"] .ev-promise h3 { font:500 clamp(1.8rem,3vw,2.7rem)/1.5 var(--font-serif); white-space:nowrap; }
-.ev-promise h3 span { color:#a88b62; font-size:.7em; margin:0 .2em; }
+.ev-promise { background:#eae0d2; }
+.ev-promise-art { margin:0; }
+.ev-promise-art__desktop { display:block; width:100%; height:auto; }
+.ev-promise-art__mobile { display:none; }
 .ev-intro-closing { padding:80px 0 0; text-align:center; }
 body[data-page="experienced"] .ev-intro-closing h3 { font:500 clamp(1.7rem,3vw,2.7rem)/1.85 var(--font-serif); margin:0 0 28px; }
 @media (max-width:1000px) {
- .ev-concerns-layout,.ev-story-layout,.ev-intro-opening,.ev-philosophy { gap:38px; }.ev-more-copy { padding:32px; }.ev-wishes { gap:12px; }.ev-wishes li { padding:22px 15px; }.ev-wishes p { font-size:.85rem; }.ev-promise-copy { padding:35px 28px; }
+ .ev-story-layout,.ev-intro-opening,.ev-philosophy { gap:38px; }.ev-more-copy { padding:32px; }.ev-wishes { gap:12px; }.ev-wishes li { padding:22px 15px; }.ev-wishes p { font-size:.85rem; }
+}
+@media (max-width:850px) {
+ .ev-promise-art__desktop { display:none; }
+ .ev-promise-art__mobile { display:grid; gap:8px; max-width:560px; margin-inline:auto; }
+ .ev-promise-art__photo,.ev-promise-art__message { position:relative; width:100%; aspect-ratio:959 / 820; overflow:hidden; }
+ .ev-promise-art__photo img,.ev-promise-art__message img { position:absolute; display:block; top:0; width:200%; height:auto; max-width:none; }
+ .ev-promise-art__photo img { left:0; }
+ .ev-promise-art__message img { left:-100%; }
+ .ev-concerns-art { max-width:430px; }
+ .ev-concerns-art__desktop { display:none; }
+ .ev-concerns-art__mobile { display:grid; gap:14px; }
+ .ev-concerns-art__text,.ev-concerns-art__portrait { position:relative; overflow:hidden; }
+ .ev-concerns-art__text { aspect-ratio:815 / 794; }
+ .ev-concerns-art__portrait { aspect-ratio:755 / 794; }
+ .ev-concerns-art__text img,.ev-concerns-art__portrait img { position:absolute; display:block; height:auto; max-width:none; top:-17.63%; }
+ .ev-concerns-art__text img { width:206.75%; left:-13.5%; }
+ .ev-concerns-art__portrait img { width:223.18%; left:-123.18%; }
+ .ev-concerns-art__text .ev-concerns-art__link { left:2%; bottom:6%; width:62%; height:8%; }
 }
 @media (max-width:700px) {
  .ev-section { padding-block:65px; }.ev-kicker { font-size:.61rem; margin-bottom:17px; }.ev-heading { margin-bottom:34px; }body[data-page="experienced"] .ev-heading h2 { font-size:1.55rem; line-height:1.85; letter-spacing:.01em; }body[data-page="experienced"] .ev-heading h3 { font-size:1.6rem; }.ev-heading h2 em { font-size:.97em; }
  .ev-hero-bottom { display:flex; flex-direction:column; gap:23px; padding-top:4px; padding-bottom:30px; }body[data-page="experienced"] .ev-hero-bottom .e-help-guide { justify-content:center; }.ev-hero-actions .button { min-height:54px; font-size:.84rem; padding-inline:15px; }.ev-quicklinks { gap:0; padding-top:19px; }.ev-quicklinks a { flex-direction:column; gap:8px; font-size:.67rem; padding:0 3px; }.ev-quicklinks span { width:30px; height:30px; font-size:.72rem; }
- .ev-concerns-layout,.ev-story-layout,.ev-intro-opening,.ev-philosophy { grid-template-columns:1fr; gap:30px; }.ev-checks li { font-size:.86rem; padding-block:15px; padding-left:25px; }.ev-gentle-message { font-size:1.07rem; }.ev-concerns-photo { max-width:300px; width:85%; margin:auto; }.ev-concerns-photo img { aspect-ratio:1.12; object-position:78% 45%; border-radius:45% 45% 3px 3px; }.ev-concerns-photo::before { border-radius:45% 45% 3px 3px; }
+ .ev-story-layout,.ev-intro-opening,.ev-philosophy { grid-template-columns:1fr; gap:30px; }
  .ev-prose { font-size:.88rem; line-height:2; }.ev-story-note { padding:28px 25px; }body[data-page="experienced"] .ev-story-note h3 { font-size:1.65rem; }.ev-story-note p { font-size:.85rem; }
- .ev-more-yourself { margin-top:38px; grid-template-columns:1fr; }.ev-more-copy { padding:30px 27px 15px; }body[data-page="experienced"] .ev-more-copy h3 { font-size:1.9rem; }.ev-more-photo { min-height:0; height:250px; }.ev-more-photo img { object-position:80% center; }.ev-more-photo::after { background:linear-gradient(180deg,#eee5d9,transparent 28%); }
- .ev-intro-opening { padding-bottom:45px; }.ev-aroma-photo { width:76%; margin:auto; }.ev-aroma-photo img { aspect-ratio:1.2; }.ev-intro-opening .ev-prose { padding-top:5px; }.ev-philosophy { padding-block:45px; }.ev-monochrome { width:88%; margin:auto; }.ev-philosophy-copy { padding-top:6px; }body[data-page="experienced"] .ev-philosophy h3 { font-size:1.8rem; margin-bottom:22px; }
+ .ev-more-yourself { margin-top:38px; grid-template-columns:1fr; }.ev-more-copy { padding:30px 27px 15px; }body[data-page="experienced"] .ev-more-copy h3 { font-size:1.9rem; }.ev-more-photo--logo { min-height:0; height:auto; width:100%; }.ev-more-photo--logo img { object-position:center; }.ev-more-photo--logo::after { display:none; }
+ .ev-intro-opening { padding-bottom:45px; }.ev-aroma-photo { width:76%; margin:auto; }.ev-aroma-photo img { aspect-ratio:1.2; }.ev-intro-opening .ev-prose { padding-top:5px; }.ev-philosophy { padding-block:45px; }.ev-monochrome { width:88%; margin:auto; }.ev-philosophy-copy { padding-top:6px; }body[data-page="experienced"] .ev-philosophy h2 { font-size:1.8rem; margin-bottom:22px; }
  .ev-for-you { padding-block:42px; }.ev-wishes { grid-template-columns:1fr; gap:12px; margin-bottom:28px; }.ev-wishes li { display:grid; grid-template-columns:44px 1fr; gap:15px; align-items:center; padding:20px; }.ev-wishes li > span { margin:0; font-size:1.4rem; }.ev-wishes small { display:none; }.ev-wishes p { font-size:.91rem; }.ev-wishes p br { display:none; }.ev-prose--center { text-align:left; }
- .ev-promise { grid-template-columns:1fr; }.ev-promise-photo { height:240px; min-height:0; }.ev-promise-copy { padding:30px 24px; }body[data-page="experienced"] .ev-promise h3 { font-size:2rem; margin-bottom:25px; }.ev-intro-closing { padding-top:48px; }body[data-page="experienced"] .ev-intro-closing h3 { font-size:1.53rem; letter-spacing:.01em; }.ev-intro-closing .ev-prose { font-size:.85rem; }
+ .ev-intro-closing { padding-top:48px; }body[data-page="experienced"] .ev-intro-closing h3 { font-size:1.53rem; letter-spacing:.01em; }.ev-intro-closing .ev-prose { font-size:.85rem; }
 }
