@@ -91,12 +91,14 @@ body[data-page="experienced"] .e-team-card__visual::after {
   pointer-events: none;
 }
 
-body[data-page="experienced"] .e-team-card__visual--manager {
+body[data-page="experienced"] .e-team-card__visual--manager,
+body[data-page="experienced"] .e-team-card__visual--female {
   height: auto;
   aspect-ratio: 1;
 }
 
-body[data-page="experienced"] .e-team-card__visual--manager::after { content: none; }
+body[data-page="experienced"] .e-team-card__visual--manager::after,
+body[data-page="experienced"] .e-team-card__visual--female::after { content: none; }
 
 body[data-page="experienced"] .e-team-card__art {
   position: absolute;
@@ -106,7 +108,8 @@ body[data-page="experienced"] .e-team-card__art {
 }
 
 body[data-page="experienced"] .e-team-card:hover .e-team-card__art { transform: scale(1.035); }
-body[data-page="experienced"] .e-team-card:hover .e-team-card__art--manager { transform: none; }
+body[data-page="experienced"] .e-team-card:hover .e-team-card__art--manager,
+body[data-page="experienced"] .e-team-card:hover .e-team-card__art--female { transform: none; }
 
 body[data-page="experienced"] .e-team-card__art--representative {
   background-image: url("representative-provided.png");
@@ -122,8 +125,8 @@ body[data-page="experienced"] .e-team-card__art--manager {
 
 body[data-page="experienced"] .e-team-card__art--female {
   background-image: url("team-provided.png");
-  background-size: 320% auto;
-  background-position: right 18%;
+  background-size: 200% 100%;
+  background-position: right center;
 }
 
 body[data-page="experienced"] .e-team-card__role {
@@ -219,7 +222,7 @@ body[data-page="experienced"] .e-team__cta {
 @media (max-width: 799px) {
   body[data-page="experienced"] .e-team__grid { margin-inline: -8px; padding-inline: 8px; }
   body[data-page="experienced"] .e-team__heading p { font-size: 1.0625rem; }
-  body[data-page="experienced"] .e-team-card__visual:not(.e-team-card__visual--manager) { height: 310px; }
+  body[data-page="experienced"] .e-team-card__visual:not(.e-team-card__visual--manager):not(.e-team-card__visual--female) { height: 310px; }
   body[data-page="experienced"] .e-team__cta { width: 100%; }
 }
 

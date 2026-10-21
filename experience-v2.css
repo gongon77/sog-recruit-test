@@ -27,11 +27,14 @@ body[data-page="experienced"] .ev-hero-bottom .e-help-guide { justify-content:fl
 .ev-quicklinks a + a { border-left:1px solid var(--ev-line); }
 .ev-quicklinks span { display:grid; place-items:center; width:34px; height:34px; border:1px solid var(--ev-line); border-radius:50%; color:#9d825a; font:italic .78rem/1 Georgia,serif; }
 .ev-concerns { background:linear-gradient(135deg,#f4eee5,#faf7f1); }
-.ev-concerns-art { max-width:1010px; margin:0 auto; }
+.ev-concerns-art { position:relative; max-width:1010px; margin:0 auto; }
 /* ご提供画像の上端にある見出しだけを表示枠で隠し、HTMLの見出しを残す。 */
 .ev-concerns-art__desktop { position:relative; aspect-ratio:1685 / 794; overflow:hidden; }
 .ev-concerns-art__desktop img { display:block; width:100%; height:100%; object-fit:cover; object-position:center bottom; }
 .ev-concerns-art__mobile { display:none; }
+.ev-concerns-art__list { position:absolute; z-index:1; top:8.8%; left:7.4%; width:47.1%; height:56%; display:grid; grid-template-rows:repeat(6,1fr); margin:0; padding:0; list-style:none; background:linear-gradient(90deg,#f9f5ee 0%,rgba(249,245,238,.99) 86%,rgba(249,245,238,.88)); pointer-events:none; }
+.ev-concerns-art__list li { display:flex; align-items:center; gap:clamp(7px,1.1vw,13px); min-width:0; border-bottom:1px solid rgba(180,146,96,.3); color:#543b2b; font:500 clamp(14px,1.75vw,19px)/1.3 var(--font-serif); white-space:nowrap; }
+.ev-concerns-art__list li::before { content:'✓'; display:grid; flex:none; place-items:center; width:clamp(19px,2.25vw,24px); aspect-ratio:1; border:1.5px solid #b88e4c; border-radius:50%; color:#a57936; font:600 clamp(13px,1.5vw,17px)/1 var(--font-sans); }
 .ev-concerns-art__link { position:absolute; z-index:1; left:7%; bottom:6%; width:31%; height:8%; border-radius:4px; }
 .ev-concerns-art__link:focus-visible { outline:3px solid #8b5b25; outline-offset:3px; background:rgba(255,255,255,.18); }
 .ev-aroma-photo figcaption,.ev-monochrome figcaption { text-align:right; font-size:.61rem; color:#8a796b; margin-top:10px; }
@@ -95,6 +98,10 @@ body[data-page="experienced"] .ev-intro-closing h3 { font:500 clamp(1.7rem,3vw,2
  .ev-concerns-art__text img { width:206.75%; left:-13.5%; }
  .ev-concerns-art__portrait img { width:223.18%; left:-123.18%; }
  .ev-concerns-art__text .ev-concerns-art__link { left:2%; bottom:6%; width:62%; height:8%; }
+ /* The mobile figure also contains a portrait below; size this overlay from the first panel's width. */
+ .ev-concerns-art__list { top:0; left:3.5%; width:96%; height:auto; aspect-ratio:1.76; margin-top:8.28%; background:linear-gradient(90deg,#f9f5ee 0%,rgba(249,245,238,.99) 89%,rgba(249,245,238,.9)); }
+ .ev-concerns-art__list li { gap:5px; font-size:clamp(12px,3.65vw,16px); letter-spacing:-.02em; white-space:normal; overflow-wrap:anywhere; }
+ .ev-concerns-art__list li::before { width:clamp(17px,5.1vw,22px); font-size:clamp(12px,3.8vw,15px); }
 }
 @media (max-width:700px) {
  .ev-section { padding-block:65px; }.ev-kicker { font-size:.61rem; margin-bottom:17px; }.ev-heading { margin-bottom:34px; }body[data-page="experienced"] .ev-heading h2 { font-size:1.55rem; line-height:1.85; letter-spacing:.01em; }body[data-page="experienced"] .ev-heading h3 { font-size:1.6rem; }.ev-heading h2 em { font-size:.97em; }
