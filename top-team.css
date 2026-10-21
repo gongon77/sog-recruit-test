@@ -114,8 +114,8 @@ body[data-page="experienced"] .e-team-card__art--manager {
 
 body[data-page="experienced"] .e-team-card__art--female {
   background-image: url("team-provided.png");
-  background-size: 200% auto;
-  background-position: right 35%;
+  background-size: 320% auto;
+  background-position: right 18%;
 }
 
 body[data-page="experienced"] .e-team-card__role {
