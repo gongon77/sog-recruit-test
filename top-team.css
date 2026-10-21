@@ -223,6 +223,10 @@ body[data-page="experienced"] .e-team__cta {
   body[data-page="experienced"] .e-team__cta { width: 100%; }
 }
 
+@media (max-width: 619px) {
+  body[data-page="experienced"] .e-team__grid { grid-auto-columns: minmax(300px, 88%); }
+}
+
 @media (prefers-reduced-motion: reduce) {
   body[data-page="experienced"] .e-team-card,
   body[data-page="experienced"] .e-team-card__art { transition: none; }
