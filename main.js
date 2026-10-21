@@ -155,4 +155,43 @@
     gallery.querySelector('[data-gallery-prev]').addEventListener('click', () => show(selected - 1));
     gallery.querySelector('[data-gallery-next]').addEventListener('click', () => show(selected + 1));
   }
+
+  // Offer a route back to the beginning only when the visitor reaches the page end.
+  if (document.querySelector('.site-footer')) {
+    const backToTop = document.createElement('button');
+    backToTop.type = 'button';
+    backToTop.className = 'back-to-top';
+    backToTop.setAttribute('aria-label', 'ページの先頭へ戻る');
+    backToTop.setAttribute('aria-hidden', 'true');
+    backToTop.inert = true;
+    backToTop.tabIndex = -1;
+    backToTop.innerHTML = '<span aria-hidden="true">↑</span><span>上に戻る</span>';
+    document.body.append(backToTop);
+
+    let frame = 0;
+    const updateBackToTop = () => {
+      frame = 0;
+      const pageHeight = document.documentElement.scrollHeight;
+      const nearEnd = window.scrollY > 0 &&
+        window.scrollY + window.innerHeight >= pageHeight - Math.max(120, window.innerHeight * .16);
+      backToTop.classList.toggle('is-visible', nearEnd);
+      backToTop.setAttribute('aria-hidden', String(!nearEnd));
+      backToTop.inert = !nearEnd;
+      backToTop.tabIndex = nearEnd ? 0 : -1;
+    };
+    const scheduleBackToTop = () => {
+      if (!frame) frame = requestAnimationFrame(updateBackToTop);
+    };
+    window.addEventListener('scroll', scheduleBackToTop, { passive: true });
+    window.addEventListener('resize', scheduleBackToTop);
+    window.addEventListener('load', scheduleBackToTop);
+    scheduleBackToTop();
+    backToTop.addEventListener('click', () => {
+      document.querySelector('.site-header .brand')?.focus({ preventScroll: true });
+      window.scrollTo({
+        top: 0,
+        behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'
+      });
+    });
+  }
 })();

@@ -1,0 +1,59 @@
+/* 経験者向けTOP: ヒーロー直後のページ内案内 */
+body[data-page="experienced"] .top-hero-jump {
+  padding-block: 22px 25px;
+  border-bottom: 1px solid rgba(183, 155, 107, .35);
+  background: linear-gradient(135deg, #f9f5ee 0%, #f3ebdf 100%);
+}
+
+body[data-page="experienced"] .top-hero-jump__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  max-width: 1120px;
+}
+
+body[data-page="experienced"] .top-hero-jump a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  min-width: 0;
+  min-height: 54px;
+  padding: 12px 15px;
+  border: 1px solid #d7c4aa;
+  border-radius: 6px;
+  background: rgba(255, 253, 249, .87);
+  color: #493c35;
+  font: 500 .96rem/1.4 var(--font-serif);
+  letter-spacing: .025em;
+  text-decoration: none;
+  transition: background-color .3s, border-color .3s, box-shadow .3s, transform .3s;
+}
+
+body[data-page="experienced"] .top-hero-jump a span {
+  color: #9c7847;
+  font: 400 1.1rem/1 var(--font-sans);
+}
+
+body[data-page="experienced"] .top-hero-jump a:hover {
+  transform: translateY(-2px);
+  border-color: #b99b68;
+  background: #fffdfa;
+  box-shadow: 0 6px 18px rgba(80, 55, 31, .09);
+}
+
+body[data-page="experienced"] .top-hero-jump a:focus-visible {
+  outline: 3px solid #9c7847;
+  outline-offset: 3px;
+}
+
+@media (min-width: 760px) {
+  body[data-page="experienced"] .top-hero-jump { padding-block: 27px 30px; }
+  body[data-page="experienced"] .top-hero-jump__grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+  body[data-page="experienced"] .top-hero-jump a { min-height: 62px; padding-inline: 20px; font-size: 1.05rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body[data-page="experienced"] .top-hero-jump a { transition: none; }
+  body[data-page="experienced"] .top-hero-jump a:hover { transform: none; }
+}
