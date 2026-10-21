@@ -91,6 +91,13 @@ body[data-page="experienced"] .e-team-card__visual::after {
   pointer-events: none;
 }
 
+body[data-page="experienced"] .e-team-card__visual--manager {
+  height: auto;
+  aspect-ratio: 1;
+}
+
+body[data-page="experienced"] .e-team-card__visual--manager::after { content: none; }
+
 body[data-page="experienced"] .e-team-card__art {
   position: absolute;
   inset: 0;
@@ -99,6 +106,7 @@ body[data-page="experienced"] .e-team-card__art {
 }
 
 body[data-page="experienced"] .e-team-card:hover .e-team-card__art { transform: scale(1.035); }
+body[data-page="experienced"] .e-team-card:hover .e-team-card__art--manager { transform: none; }
 
 body[data-page="experienced"] .e-team-card__art--representative {
   background-image: url("representative-provided.png");
@@ -108,8 +116,8 @@ body[data-page="experienced"] .e-team-card__art--representative {
 
 body[data-page="experienced"] .e-team-card__art--manager {
   background-image: url("manager-provided.png");
-  background-size: 200% auto;
-  background-position: right 38%;
+  background-size: contain;
+  background-position: center;
 }
 
 body[data-page="experienced"] .e-team-card__art--female {
@@ -139,6 +147,17 @@ body[data-page="experienced"] .e-team-card__role h3 {
   font: 500 clamp(1.65rem, 2.7vw, 2.15rem)/1.35 var(--font-serif);
   letter-spacing: .04em;
 }
+
+body[data-page="experienced"] .e-team-card__role--below {
+  position: static;
+  padding: 13px 21px 0;
+  color: #765535;
+  text-shadow: none;
+}
+
+body[data-page="experienced"] .e-team-card__role--below > span { color: #916c3c; }
+body[data-page="experienced"] .e-team-card__role--below h3 { color: #493b30; }
+body[data-page="experienced"] .e-team-card__role--below + .e-team-card__body { padding-top: 7px; }
 
 body[data-page="experienced"] .e-team-card__body {
   display: flex;
@@ -200,7 +219,7 @@ body[data-page="experienced"] .e-team__cta {
 @media (max-width: 799px) {
   body[data-page="experienced"] .e-team__grid { margin-inline: -8px; padding-inline: 8px; }
   body[data-page="experienced"] .e-team__heading p { font-size: 1.0625rem; }
-  body[data-page="experienced"] .e-team-card__visual { height: 310px; }
+  body[data-page="experienced"] .e-team-card__visual:not(.e-team-card__visual--manager) { height: 310px; }
   body[data-page="experienced"] .e-team__cta { width: 100%; }
 }
 
